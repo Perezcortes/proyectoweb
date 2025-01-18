@@ -1,0 +1,50 @@
+﻿version: '3.7'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: '*123#dejavU'
+      MYSQL_DATABASE: dejavu_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: '*123#dejavU'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - webnet
+    restart: always
+
+  apache:
+    image: php:7.4-apache
+    container_name: apache
+    volumes:
+      - ./www/public:/var/www/html
+    ports:
+      - "8086:80"
+    networks:
+      - webnet
+    depends_on:
+      - mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: '*123#dejavU'
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+    restart: always
+
+networks:
+  webnet:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local

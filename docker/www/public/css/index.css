@@ -1,0 +1,29 @@
+﻿.carousel-inner img {
+    max-width: 100%; /* Asegúrate de que las imágenes no se hagan más anchas que su contenedor */
+    height: auto; /* Mantén la proporción */
+    max-height: 500px; /* Ajusta la altura máxima según necesites */
+    object-fit: cover; /* Recorta las imágenes para que se adapten sin distorsión */
+}
+
+.carousel {
+    max-width: 25%; /* Ajusta el ancho total del carrusel */
+    margin: auto; /* Centra el carrusel */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff; /* Color del texto en el carrusel */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    padding: 1rem;
+    border-radius: 1rem;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo de los controles */
+    border-radius: 50%; /* Redondea los bordes */
+}
