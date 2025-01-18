@@ -26,7 +26,7 @@ function validateLength(input, minLength, maxLength) {
     return isValid;
 }
 
-// Verificar si los campos están vacíos con mensajes específicos
+// Verificar si los campos están vacíos con es requerido
 function checkRequired(inputArr) {
     let isValid = true;
     inputArr.forEach(input => {
