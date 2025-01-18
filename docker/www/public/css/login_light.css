@@ -1,1 +1,421 @@
-﻿
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@media (max-width: 768px) {
+  /* Aquí puedes agregar tus estilos para pantallas pequeñas */
+  body {
+    padding: 10px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aquí puedes agregar tus estilos para pantallas muy pequeñas */
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9; /* Color de fondo claro */
+  display: flex; /* Utiliza flexbox para centrar contenido */
+  flex-direction: column; /* Alinea los elementos en columna */
+  align-items: center;
+  justify-content: relative; /* Alinea el contenido hacia arriba */
+  font-family: "Poppins", sans-serif; /* Aplica la fuente Poppins */
+  min-height: 100vh; /* Asegura que ocupe al menos el 100% de la altura de la ventana */
+  margin: 0; /* Elimina márgenes predeterminados */
+}
+
+h1, p {
+  margin: 0;
+  text-shadow: 0 0 10px rgba(203, 116, 16, 0.5);
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 15px;
+}
+
+h1.title {
+  font-size: 45px;
+  line-height: 45px;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+a {
+  color: #0e2a02; /*color de olvidaste la contraseña*/
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #9e46c1;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content input {
+  accent-color: #333;
+  width: 12px;
+  height: 12px;
+}
+
+.navbar {
+  background-color: #c2790d;
+  padding: 20px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li {
+  display: inline;
+}
+
+.navbar ul li a {
+  color: #060202;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.navbar ul li a:hover {
+  background-color: #714949;
+  border-radius: 5px;
+}
+
+
+button {
+  border-radius: 20px;
+  border: 1px solid #993a2e;
+  background-color: #d05c18;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 20px;
+  padding: 12px 80px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  letter-spacing: 3px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: rgba(208, 92, 24, 0.8); /* Ajusta la opacidad para mejor visibilidad */
+  border: 2px solid #fff;
+  color: #441c1c; /* Asegura que el texto sea visible */
+}
+
+button.ghost i {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  z-index: 6;
+}
+
+button.ghost i.register {
+  right: 70px;
+}
+
+button.ghost i.login {
+  left: 70px;
+}
+
+form {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #ffffff;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #d05c18;
+  padding: 12px 0;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.container {
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(60, 6, 6, 0.25), 0 0 10px rgba(205, 108, 5, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 500px;
+  flex: 1;
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.form-control, .form-control2 {
+  width: 100%;
+  position: relative;
+}
+
+.form-control2 span, .form-control span {
+  position: absolute;
+  border-bottom: 3px solid #67a2c9;
+  left: 0;
+  bottom: 8px;
+  width: 0%;
+  transition: all 0.3s ease;
+}
+
+.form-control2 input:focus ~ span, .form-control input:focus ~ span {
+  width: 100%;
+}
+
+.form-control small, .form-control2 small {
+  color: red;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  font-size: 12px;
+  z-index: 100;
+}
+
+.login-container, .register-container {
+  width: 50%;
+}
+
+.login-container {
+  left: 0;
+  z-index: 2;
+}
+
+.container.right-panel-active .login-container {
+  transform: translateX(100%);
+}
+
+.register-container {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .register-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%, 49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%, 100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translate(-100%);
+}
+
+.overlay {
+  background-image: url(./DejaVu.png);
+  background-repeat: no-repeat;  /* Evita que la imagen se repita */
+  background-size: contain;     /* Ajusta la imagen para que se ajuste al contenedor sin distorsionar */
+  background-position: center;  /* Centra la imagen dentro del contenedor */
+  color: #160505; /* "Deja un recuerdo ahora"*/
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;  
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.4) 40%, rgba(190, 171, 144, 0.4));
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #e26918;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  transition: 0.3s ease-in-out;
+}
+
+/*Cambio de color al pasar puntero en redes sociales*/
+.social-container a:hover {
+  border: 1px solid #ec8911;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  padding: 20px;
+  color: #333;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Estilo del icono de WhatsApp */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 1000;
+  background-color: #e2e0e0; /* Fondo blanco para mejor visibilidad */
+  border-radius: 50px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+}
+
+.whatsapp-chat span {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+body.dark-mode .whatsapp-chat span {
+  color: #333;
+}
+
+.whatsapp-chat a {
+  text-decoration: none;
+  color: #25d366;
+  font-size: 2.5rem;
+}
+
+.whatsapp-chat a:hover {
+  color: #128c7e;
+}
