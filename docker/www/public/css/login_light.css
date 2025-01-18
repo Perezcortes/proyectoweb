@@ -1,5 +1,5 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+/*Ajustes responsivos*/
 @media (max-width: 768px) {
   /* Aquí puedes agregar tus estilos para pantallas pequeñas */
   body {
@@ -102,29 +102,28 @@ a:hover {
   padding: 20px;
 }
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
 .navbar ul li {
-  display: inline;
-}
-
-.navbar ul li a {
-  color: #060202;
-  text-decoration: none;
-  padding: 10px 20px;
-}
-
-.navbar ul li a:hover {
-  background-color: #714949;
-  border-radius: 5px;
-}
-
+    display: inline;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #575757;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho de la página */
+  }
 
 button {
   border-radius: 20px;
@@ -294,7 +293,7 @@ input {
 }
 
 .overlay {
-  background-image: url(./DejaVu.png);
+  background-image: url(../img/DejaVu.png);
   background-repeat: no-repeat;  /* Evita que la imagen se repita */
   background-size: contain;     /* Ajusta la imagen para que se ajuste al contenedor sin distorsionar */
   background-position: center;  /* Centra la imagen dentro del contenedor */
