@@ -1,4 +1,6 @@
-﻿services:
+﻿version: '3.1'
+
+services:
   mysql:
     image: mysql:5.7
     container_name: mysql
@@ -14,7 +16,9 @@
     restart: always
 
   apache:
-    image: php:7.4-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: apache
     volumes:
       - ./www/public:/var/www/html
