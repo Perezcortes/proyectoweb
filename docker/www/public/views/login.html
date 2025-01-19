@@ -25,18 +25,18 @@
   <div class="container" id="container">
     <!-- Registro -->
     <div class="form-container register-container">
-      <form>
+      <form method="POST" action="../register.php">
         <h1>Regístrate aquí</h1>
         <div class="form-control">
-          <input type="text" id="username" placeholder="Nombre" />
+          <input type="text" id="username" name="username" placeholder="Nombre" />
           <small id="username-error"></small>
         </div>
         <div class="form-control">
-          <input type="email" id="email" placeholder="Correo electrónico" />
+          <input type="email" id="email" name="email" placeholder="Correo electrónico" />
           <small id="email-error"></small>
         </div>
         <div class="form-control">
-          <input type="password" id="password" placeholder="Contraseña" />
+          <input type="password" id="password" name="password" placeholder="Contraseña" />
           <small id="password-error"></small>
         </div>
         <button type="submit">Registrar</button>
@@ -51,14 +51,14 @@
 
     <!-- Inicio de sesión -->
     <div class="form-container login-container">
-      <form class="form-lg">
+      <form method="POST" action="../login.php" class="form-lg">
         <h1>Inicia sesión aquí</h1>
         <div class="form-control">
-          <input type="email" class="email-2" placeholder="Correo electrónico" />
+          <input type="email" class="email-2" name="email" placeholder="Correo electrónico" />
           <small class="email-error-2"></small>
         </div>
         <div class="form-control">
-          <input type="password" class="password-2" placeholder="Contraseña" />
+          <input type="password" class="password-2" name="password" placeholder="Contraseña" />
           <small class="password-error-2"></small>
         </div>
         <div class="content">
@@ -95,7 +95,8 @@
           </button>
         </div>
       </div>
-    </div>
+    </div>  
+
   </div>
   <div class="whatsapp-chat">
     <span>Chat</span>
@@ -177,4 +178,5 @@
   </footer>
   <script src="../js/login.js"></script>
 </body>
+
 </html>
