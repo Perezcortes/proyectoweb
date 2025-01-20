@@ -1,0 +1,421 @@
+@media (max-width: 768px) {
+  /* Aquí puedes agregar tus estilos para pantallas pequeñas */
+  body {
+    padding: 10px;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Aquí puedes agregar tus estilos para pantallas muy pequeñas */
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/*estilo para la imagen */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+/*estilo para la imagen tmb*/
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+
+/*estilo para el contenedor del programa*/
+.container {
+    color:#FFf;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #181617; /* Cambia el color de fondo a tu preferencia */ 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra alrededor del contenedor */ 
+    padding: 20px; /* Espacio interior para el contenido */ 
+    border-radius: 10px; /* Esquinas redondeadas para un diseño más suave */ 
+}
+
+.titulo{
+    color:#E07FAB
+}
+/* filtrar */
+.d-flex.justify-content-center.align-items-center{
+    margin-top: 20px;
+}
+
+/*boton de perforaciones*/
+/* Cambiar color del botón */
+.dropdown .btn {
+    background-image: linear-gradient(315deg, rgba(0, 0, 0, 0.85) 0%, rgba(247, 25, 136, 1) 100%);    color: white; /* Color del texto */
+    border: none; /* Eliminar borde */
+}
+
+
+/* Cambiar color del menú */
+.dropdown-menu {
+    background-color: #C44F88; /* Fondo del menú desplegable */
+    border: 1px solid #ddd; /* Borde del menú */
+}
+
+.dropdown-menu .dropdown-item {
+    color: #333; /* Color del texto de los elementos del menú */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #E07FAB; /* Fondo de los elementos al pasar el ratón */
+    color: white; /* Color del texto al pasar el ratón */
+}
+
+  
+
+/*boton de busqueda*/
+.form {
+    --input-bg: #FFf;
+   /*  background of input */
+    --padding: 1.5em;
+    --rotate: 80deg;
+   /*  rotation degree of input*/
+    --gap: 2em;
+    /*  gap of items in input */
+    --icon-change-color: #15A986;
+   /*  when rotating changed icon color */
+    --height: 40px;
+   /*  height */
+    width: 210px;
+    padding-inline-end: 1em;
+   /*  change this for padding in the end of input */
+    background: var(--input-bg);
+    position: relative;
+    border-radius: 4px;
+  }
+  
+  .form label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--height);
+  }
+  
+  .form input {
+    width: 100%;
+    padding-inline-start: calc(var(--padding) + var(--gap));
+    outline: none;
+    background: none;
+    border: 0;
+  }
+  /* style for both icons -- search,close */
+  .form svg {
+    /* display: block; */
+    color: #111;
+    transition: 0.3s cubic-bezier(.4,0,.2,1);
+    position: absolute;
+    height: 15px;
+  }
+  /* search icon */
+  .icon {
+    position: absolute;
+    left: var(--padding);
+    transition: 0.3s cubic-bezier(.4,0,.2,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* arrow-icon*/
+  .swap-off {
+    transform: rotate(-80deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* close button */
+  .close-btn {
+    /* removing default bg of button */
+    background: none;
+    border: none;
+    right: calc(var(--padding) - var(--gap));
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+  }
+  
+  .form input:focus ~ .icon {
+    transform: rotate(var(--rotate)) scale(1.3);
+  }
+  
+  .form input:focus ~ .icon .swap-off {
+    opacity: 1;
+    transform: rotate(-80deg);
+    visibility: visible;
+    color: var(--icon-change-color);
+  }
+  
+  .form input:focus ~ .icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+  }
+  
+  .form input:valid ~ .icon {
+    transform: scale(1.3) rotate(var(--rotate))
+  }
+  
+  .form input:valid ~ .icon .swap-off {
+    opacity: 1;
+    visibility: visible;
+    color: var(--icon-change-color);
+  }
+  
+  .form input:valid ~ .icon .swap-on {
+    opacity: 0;
+    visibility: visible;
+  }
+  
+  .form input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0s;
+  }
+  
+  /*fonodo del navbar*/
+  @keyframes hero-gradient-animation {
+    0% {
+        --s-start-0: 9%;
+        --s-end-0: 55%;
+        --c-0: hsla(266, 1%, 12%, 1);
+        --y-0: 80%;
+        --x-0: 85%;
+        --s-start-1: 5%;
+        --s-end-1: 72%;
+        --y-1: 24%;
+        --x-1: 60%;
+        --c-1: hsla(335, 2%, 22%, 1);
+        --c-2: hsla(53, 0%, 0%, 0.49);
+        --y-2: 82%;
+        --x-2: 13%;
+        --s-start-2: 5%;
+        --s-end-2: 52%;
+        --x-3: 24%;
+        --c-3: hsla(299, 4%, 36%, 1);
+        --s-start-3: 13%;
+        --s-end-3: 68%;
+        --y-3: 7%;
+    }
+
+    100% {
+        --s-start-0: 9%;
+        --s-end-0: 55%;
+        --c-0: hsla(266, 0%, 12%, 1);
+        --y-0: 94%;
+        --x-0: 31%;
+        --s-start-1: 5%;
+        --s-end-1: 72%;
+        --y-1: 25%;
+        --x-1: 2%;
+        --c-1: hsla(0, 4%, 19%, 1);
+        --c-2: hsla(54, 0%, 0%, 0.49);
+        --y-2: 20%;
+        --x-2: 98%;
+        --s-start-2: 5%;
+        --s-end-2: 52%;
+        --x-3: 95%;
+        --c-3: hsla(298, 3%, 41%, 1);
+        --s-start-3: 13%;
+        --s-end-3: 68%;
+        --y-3: 92%;
+    }
+}
+
+@property --s-start-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 9%
+}
+
+@property --s-end-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 55%
+}
+
+@property --c-0 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(266, 1%, 12%, 1)
+}
+
+@property --y-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 80%
+}
+
+@property --x-0 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 85%
+}
+
+@property --s-start-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 5%
+}
+
+@property --s-end-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 72%
+}
+
+@property --y-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 24%
+}
+
+@property --x-1 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 60%
+}
+
+@property --c-1 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(335, 2%, 22%, 1)
+}
+
+@property --c-2 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(53, 0%, 0%, 0.49)
+}
+
+@property --y-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 82%
+}
+
+@property --x-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 13%
+}
+
+@property --s-start-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 5%
+}
+
+@property --s-end-2 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 52%
+}
+
+@property --x-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 24%
+}
+
+@property --c-3 {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: hsla(299, 4%, 36%, 1)
+}
+
+@property --s-start-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 13%
+}
+
+@property --s-end-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 68%
+}
+
+@property --y-3 {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 7%
+}
+
+.navbar {
+    --c-0: hsla(266, 1%, 12%, 1);
+    --y-0: 80%;
+    --x-0: 85%;
+    --y-1: 24%;
+    --x-1: 60%;
+    --c-1: hsla(335, 2%, 22%, 1);
+    --c-2: hsla(53, 0%, 0%, 0.49);
+    --y-2: 82%;
+    --x-2: 13%;
+    --x-3: 24%;
+    --c-3: hsla(299, 4%, 36%, 1);
+    --y-3: 7%;
+    ;
+    color: #FFf;
+    background-color: hsla(0, 0%, 0%, 1);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 3000 3000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3));
+    animation: hero-gradient-animation 10s linear infinite alternate;
+    background-blend-mode: overlay, normal, normal, normal, normal;
+}
+
+.fondo{
+        background-image: url('../img/pf1.jpg');
+
+}
+
+.dropdown{
+    margin-left: 10px;
+  
+}
+
+.buscador{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.boton {
+    display: flex;
+    justify-content: space-between; /* Distribuye los botones a los extremos */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  .boton .btn {
+    /* Si deseas un margen entre los botones, puedes agregarlo */
+    margin: 10px 10px; /* Este margen es opcional, solo si deseas separar los botones */
+  }
+  
