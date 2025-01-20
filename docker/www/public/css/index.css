@@ -27,7 +27,7 @@ body {
 
 .carousel {
     margin-top: 150px;
-    transform: translateX(250px); /* Mueve el carrusel 50px hacia la derecha */
+    transform: translateX(50px); /* Mueve el carrusel hacia la derecha */
 }
 
 /* Estilos para el carrusel */
