@@ -9,4 +9,3 @@ function initMap() {
   
   // Load the map when the page has loaded
   window.onload = initMap;
-  
