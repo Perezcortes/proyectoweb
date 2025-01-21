@@ -1,6 +1,8 @@
 ﻿/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
+    /*background-image: url(../img/fondo2.jpg);*/
+    background-color: #ffffff;
 }
 
 /* Estilo para el título y la descripción */
