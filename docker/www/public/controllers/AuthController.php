@@ -1,7 +1,7 @@
 ﻿<?php
 $baseDir = dirname(__DIR__) . '/';
 include_once $baseDir . 'config/database.php';
-include_once $baseDir . 'models/User.php';
+include_once $baseDir . 'models/user.php';
 
 class AuthController
 {

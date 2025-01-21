@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap">
 </head>
 
 <body>
@@ -28,17 +28,18 @@
             </ul>
         </div>
         <!-- Login/Register Button -->
-        <button class="btn btn-outline-primary" type="button" onclick="window.location.href='./views/login.html';">
+        <button class="btn btn-outline-primary" type="button" onclick="window.location.href='./views/login.html';" aria-label="Iniciar sesión o registrarse">
             <i class="fas fa-user"></i> Iniciar Sesión
             <br>ó<br>Registrarse
         </button>
+
     </nav>
 
     <!-- Main Section -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
-                <h2><i class="fas fa-tattoo"></i> Bienvenido a nuestro estudio de tatuajes</h2>
+                <h2><i class="fas fa-tattoo"></i> Bienvenido a Deja Vu</h2>
                 <p>Somos un estudio dedicado a la creación de tatuajes únicos y personalizados para cada cliente. Visítanos para descubrir nuestros trabajos y el talento de nuestros tatuadores.</p>
             </div>
             <div class="col-lg-6">
@@ -72,18 +73,32 @@
             </div>
         </div>
 
+        <!-- Sección de información -->
+        <div class="container mt-5 informacion">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="./img/dresan.jpeg" class="img-fluid" alt="Descripción de la imagen">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Conócenos</h3>
+                    <p>Este es el texto que deseas agregar al lado derecho de la imagen. Aquí puedes incluir cualquier información relevante.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Google Maps Section -->
         <div class="mt-5">
-            <h4>Nuestra Ubicación</h4>
+            <h4><i class="fas fa-map-marker-alt" style="color:rgb(182, 57, 57);"></i> Nuestra Ubicación</h4>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.41614413402652!2d-97.77431233043416!3d17.80774894498163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c601fac43b78af%3A0xbe09588f27b5fe6b!2zRMOpasOhIFZ1!5e0!3m2!1ses-419!2smx!4v1737342145274!5m2!1ses-419!2smx"
-                width="600"
-                height="450"
-                style="border:0;"
+                style="width: 100%; height: 450px; border: 0;"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+
     </div>
 
     <div class="whatsapp-chat">
@@ -98,22 +113,22 @@
         <div style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
             <!-- Sección de enlaces -->
             <div style="flex: 1; margin: 10px; min-width: 150px;">
-                <h5 style="font-size: 16px; margin-bottom: 15px;">Section</h5>
+                <h5 style="font-size: 16px; margin-bottom: 15px;">Servicios</h5>
                 <ul style="list-style: none; padding: 0;">
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Home</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Features</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Pricing</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">FAQs</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">About</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Tatuajes</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Piercings</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Removemos tatuajes</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Microdermal</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Expanciones</a></li>
                 </ul>
             </div>
 
             <div style="flex: 1; margin: 10px; min-width: 150px;">
-                <h5 style="font-size: 16px; margin-bottom: 15px;">Section</h5>
+                <h5 style="font-size: 16px; margin-bottom: 15px;">Material</h5>
                 <ul style="list-style: none; padding: 0;">
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Home</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Features</a></li>
-                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Pricing</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Maquinas de tatuar</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Cartuchos</a></li>
+                    <li><a href="#" style="color: #adb5bd; text-decoration: none;">Productos</a></li>
                     <li><a href="#" style="color: #adb5bd; text-decoration: none;">FAQs</a></li>
                     <li><a href="#" style="color: #adb5bd; text-decoration: none;">About</a></li>
                 </ul>
@@ -150,16 +165,16 @@
         <!-- Pie de página -->
         <div
             style="max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <p style="margin: 0; color: #adb5bd;">© 2025 Deja Vu Body Art. Todos los derechos reservados.</p>
+            <p style="margin: 0; color:rgb(222, 124, 5);">© 2025 Deja Vu Body Art. Todos los derechos reservados.</p>
             <div>
                 <!-- Iconos de redes sociales -->
-                <a href="#" style="color: #adb5bd; margin: 0 20px; text-decoration: none;" aria-label="WhatsApp">
+                <a href="https://wa.me/529531447499" style="color:rgb(35, 205, 46); margin: 0 25px; text-decoration: none;" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp fa-lg"></i>
                 </a>
-                <a href="#" style="color: #adb5bd; margin: 0 20px; text-decoration: none;" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/15h4Lz3Dzw/" style="color:rgb(29, 121, 214); margin: 0 25px; text-decoration: none;" aria-label="Facebook">
                     <i class="fab fa-facebook fa-lg"></i>
                 </a>
-                <a href="#" style="color: #adb5bd; margin: 0 20px; text-decoration: none;" aria-label="Instagram">
+                <a href="https://www.instagram.com/andres_dresan?igsh=MWd1ejdqOW5oeTV1eQ==" style="color:rgb(227, 17, 171); margin: 0 25px; text-decoration: none;" aria-label="Instagram">
                     <i class="fab fa-instagram fa-lg"></i>
                 </a>
             </div>

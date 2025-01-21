@@ -4,20 +4,43 @@ body {
 }
 
 /* Estilo para el título y la descripción */
+/* Estilo para el título */
 .col-lg-6 h2 {
+    font-family: "Felipa", serif;
     margin-top: 150px;
-    font-size: 24px; /* Tamaño del texto del título */
-    color: #333; /* Color del texto */
-    display: flex; /* Display flex para alinear el contenido */
-    align-items: center; /* Alineación vertical centrada */
-    gap: 0px; /* Espacio entre el ícono y el texto */
-    margin-bottom: 20px; /* Márgen inferior para separación en toda la sección */
+    font-size: 50px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-bottom: 20px;
 }
+
 
 .col-lg-6 p {
     font-size: 16px; /* Tamaño del texto del párrafo */
     color: #666; /* Color del texto */
     margin-bottom: 30px; /* Márgen inferior para separados */
+    display: flex; /* Display flex para alinear el contenido */
+}
+
+/* Animación para el título */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplica la animación al título */
+.col-lg-6 h2 {
+    font-family: "Felipa", serif;
+    animation: fadeInUp 2.5s ease-out; /* Duración y tipo de animación */
+    animation-delay: 0.5s; /* Retraso para que la animación empiece después de medio segundo */
 }
 
 /* Separación entre secciones */
@@ -40,7 +63,7 @@ body {
 /* Estilos para el carrusel con bordes redondeados y sombra */
 .carousel-inner {
     border-radius: 15px; /* Ajusta este valor para cambiar el redondeo de los bordes */
-    box-shadow: 16px 16px 32px rgba(78, 182, 235, 0.3); /* Incrementa los valores para una sombra más visible */
+    box-shadow: 16px 16px 32px rgba(149, 3, 156, 0.3); /* Incrementa los valores para una sombra más visible */
     overflow: hidden; /* Asegura que las imágenes dentro del carrusel respeten el borde redondeado */
 }
 
@@ -52,7 +75,11 @@ body {
 
 /* Estilos para el navbar */
 .navbar {
-    background-color: #bc7716; /* Cambia el color de fondo del navbar */
+    display: flex;
+    justify-content: space-between; /* Espaciar entre inicio y los elementos */
+    align-items: center; /* Alinear verticalmente los ítems */
+    padding: 10px; /* Ajustar padding según sea necesario */
+    background-color: #2d261c; /* Cambia el color de fondo del navbar */
     border-bottom: 2px solid #c76722; /* Añade un borde inferior */
     position: fixed; /* Fija la posición del navbar */
     top: 0; /* Lo coloca en la parte superior */
@@ -60,30 +87,107 @@ body {
     z-index: 1030; /* Asegura que quede sobre otros elementos */
 }
 
+/* Estilo para los enlaces del navbar */ 
+.navbar-nav .nav-link { 
+    font-family: "Big Shoulders Inline Display", serif;
+    font-size: 1.3rem; /* Ajusta el tamaño de la fuente aquí */
+    color: white; /* Color del texto */ 
+    text-decoration: none; /* Remover subrayado */ 
+    margin: 0 15px; /* Espaciado entre elementos */
+    padding: 10px 15px; /* Añadir padding para mejorar la experiencia de usuario */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid transparent; /* Definir el borde inicialmente como transparente */
+    transition: background-color 0.3s ease, border 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el cursor con difuminado */
+.navbar-nav .nav-link:hover {
+    background: radial-gradient(circle, rgb(158, 80, 11) 0%, rgb(240, 119, 32) 100%); /* Gradiente radial */
+    border-color: transparent; /* Sin borde para un efecto más suave */
+    color: rgb(18, 18, 18); /* Color del texto */
+}
+
+
+/* Ajustar el Login/Register Button al final */ 
+.navbar .ml-auto { 
+    margin-left: 5px;
+    display: flex; 
+    align-items: center; /* Centrar verticalmente */ 
+} 
+
+.navbar .btn { 
+    margin-left: 15px; /* Espaciar botón de los enlaces */ 
+}
+
 /* Estilos para la imagen del logo */
 .navbar-brand img {
-    margin-left: 30px; /* Ajusta este valor para mover la imagen hacia la derecha */
-}
-
-.navbar .nav-link {
-    color: #ffffff; /* Cambia el color del texto de los enlaces */
-}
-
-.navbar .nav-link:hover {
-    color: #fbc02d; /* Cambia el color del texto de los enlaces cuando se pasa el ratón por encima */
+    margin-left: 10px; /* Ajusta este valor para mover la imagen hacia la derecha */
 }
 
 /* Estilos para el botón de iniciar sesión/registrarse */
 .btn-outline-primary {
     color: #ffffff;
-    border-color: #bc7716;
+    border-color: #2d261c;
     white-space: nowrap; /* Evita que el texto se corte en varias líneas */
 }
-
+/*
 .btn-outline-primary:hover {
     color: #00695c;
     background-color: #fbc02d;
     border-color: #fbc02d;
+}
+*/
+/* Estilos para la sección de información */
+.informacion {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.informacion .image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.informacion .image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 0, 64, 0.4), 0 0 60px rgba(0, 0, 128, 0.3), 0 0 100px rgba(0, 0, 255, 0.2);    z-index: -1;
+    transform: scale(1.05); /* Aumenta el tamaño de la sombra */
+    transition: transform 0.3s ease;
+}
+
+.informacion img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+}
+
+.informacion .image-container:hover::before {
+    transform: scale(1.1); /* Da un efecto sutil al hacer hover */
+}
+
+.informacion h3 {
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 15px;
+}
+
+.informacion p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333; /* Color del texto */
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    .informacion img {
+        margin-bottom: 20px;
+    }
 }
 
 /* Estilo del icono de WhatsApp */
@@ -119,3 +223,15 @@ body {
   .whatsapp-chat a:hover {
     color: #128c7e;
   }
+
+/* Estilo para el título */
+.mt-5 {
+    font-family: "Big Shoulders Inline Display", serif;
+    font-size: 4.5rem; /* Ajustar el tamaño de la fuente */
+    text-align: center; /* Centrar el texto */
+    transition: color 0.3s ease, border 0.3s ease; /* Transiciones suaves */}
+
+/* Efecto al pasar el cursor */
+.mt-5:hover {
+    color: #c76722; /* Cambia el color al pasar el cursor */
+}
