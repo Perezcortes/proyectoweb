@@ -1,7 +1,7 @@
 ﻿<?php
 class User {
     private $conn;
-    private $table_name = "usuarios";  // Asegúrate de que el nombre de la tabla sea "usuarios"
+    private $table_name = "usuarios"; // debe coincidir con tu tabla en la base de datos.
 
     public $id;
     public $username;
@@ -13,21 +13,24 @@ class User {
     }
 
     public function emailExists($email) {
-        $query = "SELECT id FROM " . $this->table_name . " WHERE correo = ? LIMIT 1";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $email);
-        $stmt->execute();
+        try {
+            $query = "SELECT id FROM " . $this->table_name . " WHERE correo = ? LIMIT 1";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(1, $email);
+            $stmt->execute();
 
-        if($stmt->rowCount() > 0) {
-            return true;
-        } else {
+            return $stmt->rowCount() > 0;
+        } catch (PDOException $e) {
+            // En producción, registra este error en lugar de mostrarlo.
+            error_log("Error en emailExists: " . $e->getMessage());
             return false;
         }
     }
 
     public function save($username, $email, $password) {
         try {
-            $query = "INSERT INTO " . $this->table_name . " (`nombre`, `correo`, `password`) VALUES (:username, :email, :password)";
+            $query = "INSERT INTO " . $this->table_name . " (`nombre`, `correo`, `password`) 
+                      VALUES (:username, :email, :password)";
             $stmt = $this->conn->prepare($query);
 
             // Limpiar datos
@@ -40,33 +43,38 @@ class User {
             $stmt->bindParam(":email", $this->email);
             $stmt->bindParam(":password", $this->password);
 
-            if ($stmt->execute()) {
-                return true;
-            } else {
-                return false;
-            }
+            return $stmt->execute();
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            // En producción, registra este error en lugar de mostrarlo.
+            error_log("Error en save: " . $e->getMessage());
             return false;
         }
     }
 
     public function login() {
-        $query = "SELECT id, nombre AS username, password FROM " . $this->table_name . " WHERE correo = :email LIMIT 0,1";
-        $stmt = $this->conn->prepare($query);
+        try {
+            $query = "SELECT id, nombre AS username, password
+            FROM " . $this->table_name . " 
+            WHERE correo = :email LIMIT 0,1";
+            $stmt = $this->conn->prepare($query);
 
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $stmt->bindParam(":email", $this->email);
-        $stmt->execute();
+            $this->email = htmlspecialchars(strip_tags($this->email));
+            $stmt->bindParam(":email", $this->email);
+            $stmt->execute();
 
-        if ($stmt->rowCount() > 0) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($this->password, $row['password'])) {
-                $this->id = $row['id'];
-                $this->username = $row['username'];
-                return true;
+            if ($stmt->rowCount() > 0) {
+                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                if (password_verify($this->password, $row['password'])) {
+                    $this->id = $row['id'];
+                    $this->username = $row['username'];
+                    return true;
+                }
             }
+            return false;
+        } catch (PDOException $e) {
+            // En producción, registra este error en lugar de mostrarlo.
+            error_log("Error en login: " . $e->getMessage());
+            return false;
         }
-        return false;
     }
 }
