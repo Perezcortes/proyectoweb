@@ -14,6 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
+        
         <!-- Logo -->
         <a class="navbar-brand" href="./index.php">
             <img src="./img/dj1.png" width="90" height="85" alt="logo" class="d-inline-block align-top">
@@ -24,7 +25,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Citas</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Tatuadores</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Perforaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="./views/percing.html">Perforaciones</a></li>
             </ul>
         </div>
         <!-- Login/Register Button -->
