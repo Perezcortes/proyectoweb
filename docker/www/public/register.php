@@ -1,8 +1,6 @@
 <?php
 include_once 'controllers/AuthController.php';
 
-// No es necesario establecer el encabezado 'Content-Type: application/json' si no vas a usar JSON
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'] ?? null;
     $email = $_POST['email'] ?? null;
