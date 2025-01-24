@@ -30,18 +30,6 @@
   }
 }
 
-/*estilo para la imagen */
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-/*estilo para la imagen tmb*/
-.navbar-brand img {
-    margin-right: 10px;
-}
-
-
 /*estilo para el contenedor del programa*/
 .container {
     color:#FFf;
