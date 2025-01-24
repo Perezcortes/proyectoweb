@@ -1,17 +1,16 @@
-﻿/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    /*background-image: url(../img/fondo2.jpg);*/
-    background-color: #ffffff;
+﻿body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url(../img/fondo.png);
+    background-blend-mode: overlay;
 }
+
 
 /* Estilo para el título y la descripción */
 /* Estilo para el título */
 .col-lg-6 h2 {
-    font-family: "Felipa", serif;
+    font-family: "Old English Text MT", serif;
     margin-top: 150px;
     font-size: 50px;
-    color: #333;
+    color: #000000;
     display: flex;
     align-items: center;
     gap: 0px;
@@ -21,7 +20,7 @@ body {
 
 .col-lg-6 p {
     font-size: 16px; /* Tamaño del texto del párrafo */
-    color: #666; /* Color del texto */
+    color: #000000; /* Color del texto */
     margin-bottom: 30px; /* Márgen inferior para separados */
     display: flex; /* Display flex para alinear el contenido */
 }
@@ -81,8 +80,8 @@ body {
     justify-content: space-between; /* Espaciar entre inicio y los elementos */
     align-items: center; /* Alinear verticalmente los ítems */
     padding: 10px; /* Ajustar padding según sea necesario */
-    background-color: #2d261c; /* Cambia el color de fondo del navbar */
-    border-bottom: 2px solid #c76722; /* Añade un borde inferior */
+    background-color: #18130f; /* Cambia el color de fondo del navbar */
+    border-bottom: 2px solid #fafafa; /* Añade un borde inferior */
     position: fixed; /* Fija la posición del navbar */
     top: 0; /* Lo coloca en la parte superior */
     width: 100%; /* Asegura que ocupe todo el ancho */
@@ -104,7 +103,7 @@ body {
 
 /* Efecto al pasar el cursor con difuminado */
 .navbar-nav .nav-link:hover {
-    background: radial-gradient(circle, rgb(158, 80, 11) 0%, rgb(240, 119, 32) 100%); /* Gradiente radial */
+    background: radial-gradient(circle, rgb(86, 84, 86) 0%, rgb(117, 112, 115) 100%); /* Gradiente radial */
     border-color: transparent; /* Sin borde para un efecto más suave */
     color: rgb(18, 18, 18); /* Color del texto */
 }
