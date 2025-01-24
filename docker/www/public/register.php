@@ -1,5 +1,4 @@
-﻿<?php
-session_start();
+<?php
 include_once 'controllers/AuthController.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -9,13 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $auth = new AuthController();
     try {
-        if ($auth->register($username, $email, $password)) {
-            header("Location: login.html");
-            exit();
-        } else {
-            echo "Error al registrar.";
-        }
+        $success = $auth->register($username, $email, $password);
+        // Enviar un mensaje simple en texto plano
+        echo $success ? 'Registro exitoso.' : 'Error al registrar en la base de datos.';
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        // Enviar un mensaje de error simple
+        echo 'Error: ' . $e->getMessage();
     }
 }

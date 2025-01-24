@@ -14,6 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
+        
         <!-- Logo -->
         <a class="navbar-brand" href="./index.php">
             <img src="./img/dj1.png" width="90" height="85" alt="logo" class="d-inline-block align-top">
