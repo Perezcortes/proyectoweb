@@ -25,11 +25,14 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                <input class="form-control mr-sm-2" type="search" id="searchBar" placeholder="Buscar"
+                    aria-label="Buscar">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchButton">Buscar</button>
             </form>
         </div>
     </nav>
+
+    <div id="results"></div>
 
     <div class="container mt-5">
         <!-- Título del equipo de tatuadores -->
@@ -60,8 +63,7 @@
             <!-- Sección de Tatuador -->
             <div class="col-md-4 artist-section">
                 <!-- Nombre y Red Social -->
-                <div class="artist-header">
-                    <span class="artist-name">Andres Villagomez</span>
+                <div class="artist-header" id="tatuador-andres-villagomez">
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -142,7 +144,7 @@
             <!-- Repite esta sección para otros tatuadores -->
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
