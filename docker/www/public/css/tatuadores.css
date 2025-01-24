@@ -1,0 +1,147 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#team-section-title {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 50px;
+    /* Espacio adicional para mover el título hacia abajo */
+    text-align: center;
+    /* Centrar horizontalmente */
+}
+
+p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-container {
+    padding: 20px;
+    text-align: center;
+    /* Asegurarnos de que todo esté centrado */
+}
+
+/* Estilos personalizados para el navbar */
+.custom-navbar {
+    background-color: #343a40;
+    /* color de fondo */
+    border-bottom: 3px solid #007bff;
+    /* línea de margen */
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar .form-inline .btn {
+    color: #fff;
+    /* cambiar colores del navbar a blanco */
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        justify-content: flex-end;
+    }
+
+    #team-section-title {
+        text-align: center;
+        margin-top: 50px;
+        /* Asegurar que esté más abajo */
+    }
+
+    .text-container {
+        text-align: left;
+        /* Solo centrar en pantallas pequeñas */
+    }
+}
+
+/* Estilos específicos para las secciones de tatuadores */
+.artist-section {
+    margin-bottom: 20px;
+}
+
+.artist-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.artist-name {
+    font-size: 38px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+}
+
+/* Estilos de Swiper */
+/* Contenedor del carrusel */
+.swiper-container {
+    width: 180%; /* Ajusta el ancho según tus necesidades */
+    max-height: 300px; /* Ajusta la altura */
+    overflow: hidden;
+    display: flex; /* Usar flex para centrar */
+    justify-content: center; /* Centrando horizontalmente */
+    align-items: center; /* Centrando verticalmente */
+    margin: 0 auto; /* Centrando el contenedor */
+  }
+  
+  /* Ajuste de las diapositivas */
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; /* Centrar las imágenes en su contenedor */
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto; /* Ajuste automático del ancho */
+  }
+  
+  .swiper-slide img {
+    max-width: 80%;
+    max-height: 250px; /* Ajusta la altura de las imágenes */
+    object-fit: cover;
+    border-radius: 10px;
+  }  
+
+.carousel img {
+    max-width: 150px;
+    border-radius: 5px;
+}
