@@ -3,25 +3,15 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
     var email = document.getElementById("Email").value;
     var nombre = document.getElementById("Nombre").value;
     var fecha = document.getElementById("datepicker").value;
-    var horaSeleccionada = document.getElementById('Hora').value;
-
-    // Verificar que se haya seleccionado una hora
-    if (!horaSeleccionada) {
-        alert("Por favor, selecciona una hora para tu cita.");
-        return;
-    }
-
-    var hora = horaSeleccionada.value;
 
     // Crear un objeto con los datos del formulario
     var formData = new FormData();
     formData.append("email", email);
     formData.append("nombre", nombre);
     formData.append("fecha", fecha);
-    formData.append("hora", hora);
 
     // Enviar datos a PHP usando AJAX
-    fetch("../controllers/PercingController.php", {
+    fetch("../models/percing.php", {
         method: "POST",
         body: formData
     })
@@ -37,12 +27,18 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
     .catch(error => console.error("Error:", error));
 
 });
-flatpickr("#datepicker", {
-    dateFormat: "Y-m-d",
-    defaultDate: "today",
-    locale: "es", // Configuración de idioma español
-    disableMobile: true
+
+document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#datepicker", {
+        dateFormat: "Y-m-d",
+        defaultDate: "today",
+        locale: "es", // Configuración de idioma español
+        disableMobile: true
+    });
 });
+
+
+
 
 const toastTrigger = document.getElementById('liveToastBtn')
 const toastLiveExample = document.getElementById('liveToast')
@@ -55,13 +51,3 @@ if (toastTrigger) {
 }
 
 
-document.querySelector("form").addEventListener("submit", function (e) {
-    let hora = document.getElementById("hora-cita").value;
-    
-    if (!hora) {
-        alert("Por favor, selecciona una hora para tu cita.");
-        e.preventDefault(); // Evita que el formulario se envíe
-    } else {
-        console.log("Hora seleccionada: " + hora);
-    }
-});
