@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Citas</a></li>
-                <li class="nav-item"><a class="nav-link" href="./views/tatuadores.html">Tatuadores</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Tatuadores</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="./views/percing.html">Perforaciones</a></li>
             </ul>
