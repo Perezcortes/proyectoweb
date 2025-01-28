@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $success = $auth->register($username, $email, $password);
         // Enviar un mensaje simple en texto plano
-        echo $success ? 'Registro exitoso.' : 'Error al registrar en la base de datos.';
+        echo $success ? 'Registro exitoso.' : 'Error al registrar datos.';
     } catch (Exception $e) {
         // Enviar un mensaje de error simple
-        echo 'Error: ' . $e->getMessage();
+        echo '' . $e->getMessage();
     }
 }

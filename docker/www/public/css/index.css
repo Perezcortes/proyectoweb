@@ -2,8 +2,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url(../img/fondo.png);
     background-blend-mode: overlay;
 }
-
-
+ 
 /* Estilo para el título y la descripción */
 /* Estilo para el título */
 .col-lg-6 h2 {
@@ -103,7 +102,7 @@
 
 /* Efecto al pasar el cursor con difuminado */
 .navbar-nav .nav-link:hover {
-    background: radial-gradient(circle, rgb(86, 84, 86) 0%, rgb(117, 112, 115) 100%); /* Gradiente radial */
+    background: radial-gradient(circle, rgb(86, 84, 86) 0%, rgb(117, 112, 115) 100%);
     border-color: transparent; /* Sin borde para un efecto más suave */
     color: rgb(18, 18, 18); /* Color del texto */
 }
@@ -127,7 +126,7 @@
 
 /* Estilos para el botón de iniciar sesión/registrarse */
 .btn-outline-primary {
-    color: #ffffff;
+    color: #d17a07;
     border-color: #2d261c;
     white-space: nowrap; /* Evita que el texto se corte en varias líneas */
 }
@@ -236,3 +235,29 @@
 .mt-5:hover {
     color: #c76722; /* Cambia el color al pasar el cursor */
 }
+
+/* Scrollbar personalizado */
+
+/* Fondo del scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+    background-color: #212529; /* Color de fondo */
+  }
+  
+  /* Track bar */
+  ::-webkit-scrollbar-track {
+    background-color: #5f6163; /* Color de la pista */
+  }
+  
+  /* Handle bar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #dedfe2; /* Color de la manija */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #212529; /* Borde alrededor */
+  }
+  
+  /* Handle bar (Hover) */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #0a58ca; /* Color de la manija al pasar el ratón */
+  }
+  
