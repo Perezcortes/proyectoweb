@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             $success = $auth->login($email, $password);
             if ($success) {
-                if ($email === 'andres.villagomez@dejaVu.com') {
-                    echo 'admin_login'; // Enviar respuesta para el admin
+                if (strpos($email, '@dejaVu.com') !== false) {
+                    echo 'admin_login'; // Cualquier email con @dejaVu.com es admin, pero existe una segunda autenticacion con pin de seguridad
                 } else {
                     echo 'user_login'; // Indicador para redirección normal
                 }
@@ -29,3 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo 'Por favor, complete todos los campos.';
     }
 }
+?>
