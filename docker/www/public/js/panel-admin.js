@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             showErrorAlert("Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde.");
         }
     });
-
+    
     function showErrorAlert(message) {
         Swal.fire({
             title: "Error",
@@ -101,8 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
             cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.dismiss === Swal.DismissReason.cancel) {
-                addUserForm.reset();
+                document.getElementById("addUserForm").reset();
+                const modalElement = document.getElementById("addUserModal");
+                const modalInstance = bootstrap.Modal.getInstance(modalElement);
+                if (modalInstance) {
+                    modalInstance.hide();
+                }
             }
         });
     }
+
+    // Evento para cerrar el modal y reiniciar el formulario
+    document.getElementById("addUserModal").addEventListener("hidden.bs.modal", () => {
+        addUserForm.reset();
+    });
 });
