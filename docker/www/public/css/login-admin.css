@@ -28,3 +28,25 @@
     background: linear-gradient(135deg, #cb6008, #ff4b2b);
     border: none;
 }
+
+/* Estilos personalizados para el título del modal */
+.swal2-title {
+    color: #000000; /* Cambia el color del título */
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente */
+  }
+  
+  /* Estilos personalizados para el botón */
+  .swal2-confirm {
+    background-color: #da731f !important; /* Color de fondo del botón */
+    border: none; /* Sin borde */
+    border-radius: 0.30em; /* Bordes redondeados */
+    padding: 10px 20px; /* Ajusta el espaciado */
+    font-size: 1em; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  }
+  /* Ajustes de animaciones */
+  .swal2-popup {
+    -webkit-animation: animate__animated animate__fadeInDown; /* Animación de entrada */
+    animation: animate__animated animate__fadeInDown;
+  }
+  

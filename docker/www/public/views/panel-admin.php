@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel-administrador</title>
     <link rel="stylesheet" href="../css/panel-admin.css">
+    <!-- Fuente personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 </head>
 <body>
-    <header class="header bg-dark text-white text-center p-3">
+    <header class="header bg-dark text-white d-flex justify-content-between align-items-center p-3">
         <h1>Administrador</h1>
+        <button id="logoutButton" class="logout-btn">Cerrar Sesión</button>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -68,6 +73,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybIVzCMsgSIsPphlGxUSKek/lrFuIdvQLrjTGcmgiG4iJOi1z" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93qYOR4wKjc5Y5ad+SI3CZYWbHdMol+UHVyK8OOlYkKbiwaI4KqcJereHjaGRx" crossorigin="anonymous"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/panel-admin.js"></script>
 </body>
 </html>
