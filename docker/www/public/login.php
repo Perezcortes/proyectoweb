@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (strpos($email, '@dejaVu.com') !== false) {
                     echo 'admin_login'; // Cualquier email con @dejaVu.com es admin, pero existe una segunda autenticacion con pin de seguridad
                 } else {
-                    echo 'user_login'; // Indicador para redirección normal
+                    echo 'user_login'; // Indicador para redirección normal con correos diferentes
                 }
             } else {
                 echo 'Error al iniciar sesión.';
