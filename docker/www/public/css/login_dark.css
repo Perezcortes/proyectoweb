@@ -49,6 +49,7 @@ body {
   }
 
 h1, p {
+  font-family: 'Blacksword', sans-serif;
   margin: 0;
   text-shadow: 0 0 10px rgba(92, 11, 5, 0.5);
 }
@@ -110,15 +111,6 @@ a:hover {
 
 .navbar ul li a:hover {
   background-color: #575757;
-}
-
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: auto;
-  width: 100%; /* Asegura que el footer ocupe todo el ancho de la página */
 }
 
 button {
@@ -412,4 +404,50 @@ body.dark-mode .whatsapp-chat span {
 
 .whatsapp-chat a:hover {
   color: #128c7e;
+}
+
+/* Estilos personalizados para el título del modal */
+.swal2-title {
+  color: #000000; /* Cambia el color del título */
+  font-size: 1.5em; /* Ajusta el tamaño de la fuente */
+}
+
+/* Estilos personalizados para el botón */
+.swal2-confirm {
+  background-color: #da731f !important; /* Color de fondo del botón */
+  border: none; /* Sin borde */
+  border-radius: 0.30em; /* Bordes redondeados */
+  padding: 10px 20px; /* Ajusta el espaciado */
+  font-size: 1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+/* Ajustes de animaciones */
+.swal2-popup {
+  -webkit-animation: animate__animated animate__fadeInDown; /* Animación de entrada */
+  animation: animate__animated animate__fadeInDown;
+}
+
+/* Scrollbar personalizado */
+
+/* Fondo del scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+  background-color: #212529; /* Color de fondo */
+}
+
+/* Track bar */
+::-webkit-scrollbar-track {
+  background-color: #343a40; /* Color de la pista */
+}
+
+/* Handle bar */
+::-webkit-scrollbar-thumb {
+  background-color: #0d6efd; /* Color de la manija */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid #212529; /* Borde alrededor */
+}
+
+/* Handle bar (Hover) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0a58ca; /* Color de la manija al pasar el ratón */
 }

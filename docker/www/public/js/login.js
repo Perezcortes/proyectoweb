@@ -61,74 +61,107 @@
     });
     return isValid;
   }
-
-  // Registro
-  document
-    .getElementById("reload-button")
-    .addEventListener("click", async function (event) {
-      event.preventDefault();
-      const registerForm = document.querySelector(
-        "form[action='../register.php']"
-      );
-      const formData = new FormData(registerForm);
-
-      try {
-        const response = await fetch(registerForm.action, {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.text(); // Cambiado a .text() para recibir texto plano
-        console.log(result); // Mostrar la respuesta
-
-        if (result.includes("Registro exitoso")) {
-          alert(result); // Mostrar mensaje de éxito
-          window.location.href = "../views/login.html"; // Redirigir
-        } else {
-          alert(result); // Mostrar mensaje de error
-        }
-      } catch (error) {
-        console.error("Error al registrar:", error);
-        alert("Hubo un problema con el registro.");
-      }
-    });
-
-    document
-    .getElementById("loginButton")
-    .addEventListener("click", async function (event) {
-      event.preventDefault(); // Evita que el formulario se envíe por defecto
-  
-      // Obtener el formulario
-      const loginForm = document.getElementById("loginForm");
-  
-      // Crear un objeto FormData con los datos del formulario
-      const formData = new FormData(loginForm);
-  
-      try {
-        // Realizar la solicitud POST a login.php
-        const response = await fetch("http://localhost:8086/login.php", {
-          method: "POST",
-          body: formData,
-        });
-  
-        // Obtener el resultado como texto
-        const result = await response.text();
-        console.log(result); // Para depuración
-  
-        if (result.trim() === "Login exitoso.") {
-          console.log("Redirigiendo a index.php...");
-          alert("Inicio de sesión exitoso.");
-          window.location.href = "../index.php";
-        } else {
-          // Mostrar el mensaje de error si las credenciales son incorrectas
-          alert(result);
-        }
-      } catch (error) {
-        console.error("Error al iniciar sesión:", error);
-        alert(
-          "Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde."
-        );
-      }
-    });
-  
 });
+
+// Registro
+document
+  .getElementById("reload-button")
+  .addEventListener("click", async function (event) {
+    event.preventDefault();
+    const registerForm = document.querySelector(
+      "form[action='../register.php']"
+    );
+    const formData = new FormData(registerForm);
+
+    try {
+      const response = await fetch(registerForm.action, {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.text();
+      console.log(result); // Mostrar la respuesta
+
+      if (result.includes("Registro exitoso")) {
+        Swal.fire({
+          title: "¡Registro exitoso!",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        }).then(() => {
+          window.location.href = "../views/login.php"; // Redirigir a login
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: result,
+          icon: "error",
+          confirmButtonText: "Intentar de nuevo",
+        });
+      }
+    } catch (error) {
+      console.error("Error al registrar:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un problema con el registro. Inténtalo nuevamente más tarde.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+    }
+  });
+
+  //Iniciar sesion
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .getElementById("loginButton")
+      .addEventListener("click", async function (event) {
+        event.preventDefault();
+  
+        const loginForm = document.getElementById("loginForm");
+        const formData = new FormData(loginForm);
+  
+        try {
+          const response = await fetch("../login.php", {
+            method: "POST",
+            body: formData,
+          });
+  
+          const result = await response.text();
+          console.log(result);
+  
+          if (result.trim() === "admin_login") {
+            Swal.fire({
+              title: "Bienvenido Admin",
+              text: "Redirigiendo al panel de administración...",
+              icon: "success",
+              confirmButtonText: "Aceptar",
+            }).then(() => {
+              window.location.href = "../views/login-admin.php";
+            });
+          } else if (result.trim() === "user_login") {
+            Swal.fire({
+              title: "Inicio de sesión exitoso",
+              icon: "success",
+              confirmButtonText: "Aceptar",
+            }).then(() => {
+              window.location.href = "../index.php";
+            });
+          } else {
+            Swal.fire({
+              title: "Error",
+              text: result,
+              icon: "error",
+              confirmButtonText: "Reintentar",
+            });
+          }
+        } catch (error) {
+          console.error("Error al iniciar sesión:", error);
+          Swal.fire({
+            title: "Error",
+            text: "Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde.",
+            icon: "error",
+            confirmButtonText: "Aceptar",
+          });
+        }
+      });
+  });
+  

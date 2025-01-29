@@ -5,21 +5,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Getting and sanitizing inputs
     $email = $_POST['email'] ?? null;
     $password = $_POST['password'] ?? null;
+    error_log("Email recibido: $email"); // Depuración
+    error_log("Password recibido: $password"); // Depuración
 
     if ($email && $password) {
         $auth = new AuthController();
         try {
             $success = $auth->login($email, $password);
-            // Attempt login
-            echo $success ? 'Login exitoso.' : 'Error al iniciar sesión.';
-            // If credentials are correct, return "success"
+            if ($success) {
+                if ($email === 'andres.villagomez@dejaVu.com') {
+                    echo 'admin_login'; // Enviar respuesta para el admin
+                } else {
+                    echo 'user_login'; // Indicador para redirección normal
+                }
+            } else {
+                echo 'Error al iniciar sesión.';
+            }
         } catch (Exception $e) {
-            // Give a simple error message
-            error_log($e->getMessage());  // Log the error for debugging purposes
+            error_log($e->getMessage());
             echo 'Error al intentar iniciar sesión. Por favor, inténtelo de nuevo más tarde.';
         }
     } else {
         echo 'Por favor, complete todos los campos.';
     }
 }
-?>

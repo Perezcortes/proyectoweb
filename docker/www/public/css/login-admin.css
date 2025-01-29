@@ -1,0 +1,30 @@
+﻿body {
+    background: linear-gradient(135deg, #2e0632, #71014c);
+    color: #fff;
+}
+
+.login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 45px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-box h1 {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #cb6008, #ff4b2b);
+    border: none;
+}

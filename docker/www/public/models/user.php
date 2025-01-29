@@ -3,7 +3,7 @@ class User {
     private $conn;
     private $table_name = "usuarios"; // debe coincidir con tu tabla en la base de datos.
 
-    public $id;
+    public $id_usuario;
     public $username;
     public $email;
     public $password;
@@ -14,7 +14,7 @@ class User {
 
     public function emailExists($email) {
         try {
-            $query = "SELECT id FROM " . $this->table_name . " WHERE correo = ? LIMIT 1";
+            $query = "SELECT id_usuario FROM " . $this->table_name . " WHERE correo = ? LIMIT 1";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(1, $email);
             $stmt->execute();
@@ -53,7 +53,7 @@ class User {
 
     public function login() {
         try {
-            $query = "SELECT id, nombre AS username, password
+            $query = "SELECT id_usuario, nombre AS username, password
             FROM " . $this->table_name . " 
             WHERE correo = :email LIMIT 0,1";
             $stmt = $this->conn->prepare($query);
@@ -65,14 +65,17 @@ class User {
             if ($stmt->rowCount() > 0) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 if (password_verify($this->password, $row['password'])) {
-                    $this->id = $row['id'];
+                    $this->id_usuario = $row['id_usuario'];
                     $this->username = $row['username'];
                     return true;
+                } else {
+                    error_log("Contraseña incorrecta para el correo: " . $this->email);
                 }
+            } else {
+                error_log("Correo no encontrado: " . $this->email);
             }
             return false;
         } catch (PDOException $e) {
-            // En producción, registra este error en lugar de mostrarlo.
             error_log("Error en login: " . $e->getMessage());
             return false;
         }
