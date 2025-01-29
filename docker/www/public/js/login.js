@@ -135,7 +135,7 @@ document
               icon: "success",
               confirmButtonText: "Aceptar",
             }).then(() => {
-              window.location.href = "../views/panel-admin.php";
+              window.location.href = "../views/login-admin.php";
             });
           } else if (result.trim() === "user_login") {
             Swal.fire({
