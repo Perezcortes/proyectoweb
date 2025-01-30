@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 </head>
+
 <body>
     <header class="header bg-dark text-white d-flex justify-content-between align-items-center p-3">
         <h1>Administrador</h1>
@@ -26,10 +28,10 @@
                             <a class="nav-link text-white" href="#" id="usuarios-link">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Roles</a>
+                            <a class="nav-link text-white" href="#" id="producto-link">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Reportes</a>
+                            <a class="nav-link text-white" href="#">Tatuadores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Configuración</a>
@@ -59,6 +61,31 @@
                             </thead>
                             <tbody>
                                 <!-- Aquí se llenarán los datos de los usuarios -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="producto-content" style="display: none;">
+                    <h2 class="mt-3">Productos</h2>
+                    <button class="noselect">
+                        <span class="text">Add</span>
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="buttonSpan">+</span>
+                        </span>
+                    </button>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí se llenarán los datos del inventario -->
                             </tbody>
                         </table>
                     </div>
@@ -106,10 +133,48 @@
             </div>
         </div>
     </div>
+    <!-- Modal para agregar un nuevo producto -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Agregar Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProductForm" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Nombre del Producto</label>
+                            <input type="text" class="form-control" id="productName" name="productName" placeholder="Nombre del Producto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productQuantity" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" id="productQuantity" name="productQuantity" placeholder="Cantidad" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="productDescription" name="productDescription" placeholder="Descripción" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Precio</label>
+                            <input type="number" class="form-control" id="productPrice" name="productPrice" placeholder="Precio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productImage" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/panel-admin.js"></script>
 </body>
+
 </html>

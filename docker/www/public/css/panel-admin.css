@@ -112,3 +112,78 @@ tr:nth-child(even) {
     background-color: #0a58ca; /* Color de la manija al pasar el ratón */
   }
   
+  /* Boton de agregar producto */
+  button.noselect {
+    width: 115px;  /* Ajustar el ancho del botón */
+    height: 35px;  /* Ajustar la altura del botón */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: #00a600;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #00a600;
+    margin-bottom: 20px;  /* Ajusta el margen inferior para separar el botón de la tabla */
+  }
+  
+  button,
+  button span {
+    transition: 200ms;
+  }
+  
+  button .text {
+    transform: translateX(25px);  /* Ajustar la posición del texto */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;  /* Ajustar el tamaño de la fuente */
+  }
+  
+  button .icon {
+    position: absolute;
+    border-left: 1px solid #007300;
+    transform: translateX(75px);  /* Ajustar la posición del icono */
+    height: 30px;  /* Ajustar la altura del icono */
+    width: 30px;  /* Ajustar el ancho del icono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button svg {
+    width: 12px;  /* Ajustar el tamaño del SVG */
+    fill: #eee;
+  }
+  
+  button:hover {
+    background: #00a600;
+  }
+  
+  button:active {
+    background: #00cc00;
+  }
+  
+  button:hover .text {
+    color: transparent;
+  }
+  
+  button:hover .icon {
+    width: 100px;  /* Ajustar el ancho del icono en hover */
+    border-left: none;
+    transform: translateX(0);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:active .icon svg {
+    transform: scale(0.8);
+  }
+  
+  .buttonSpan {
+    color: white;
+    margin: 100px;  /* Ajustar el margen del botón */
+    font-size: 20px;  /* Ajustar el tamaño de la fuente del span */
+  }
+  
