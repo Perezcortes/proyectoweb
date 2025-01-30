@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verifica las credenciales del administrador
     if ($admin->authenticate($nombre, $pin)) {
         // Devuelve la respuesta según el rol
-        if ($admin->rol === 'administrador') {
+        if ($admin->rol === 'admin') {
             echo 'admin_login';
         } else {
             echo 'user_login';
