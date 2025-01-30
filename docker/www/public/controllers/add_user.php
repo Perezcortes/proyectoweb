@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         $user = new User();
         $usuarios = $user->readUsuarios();
-        
+
         error_log("Usuarios recuperados: " . print_r($usuarios, true)); // Depuración
 
         if (count($usuarios) > 0) {
@@ -43,4 +43,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         error_log('Error en el servidor: ' . $e->getMessage());
     }
 }
-?>
