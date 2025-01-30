@@ -22,7 +22,7 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" aria-current="page" href="./panel-admin.php">Inicio</a>
+                            <a class="nav-link text-white active" aria-current="page" href="#" id="inicio-link">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#" id="usuarios-link">Usuarios</a>
@@ -34,7 +34,7 @@
                             <a class="nav-link text-white" href="#">Tatuadores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Configuración</a>
+                            <a class="nav-link text-white" href="#" id="inventario-link">Inventario</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                 <div id="producto-content" style="display: none;">
                     <h2 class="mt-3">Productos</h2>
                     <button class="noselect">
-                        <span class="text">Add</span>
+                        <span class="text">Agregar</span>
                         <span class="icon">
                             <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"></svg>
                             <span class="buttonSpan">+</span>
@@ -81,6 +81,8 @@
                                     <th>Nombre del Producto</th>
                                     <th>Cantidad</th>
                                     <th>Precio</th>
+                                    <th>Categoría</th>
+                                    <th>Descripción</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -158,6 +160,15 @@
                         <div class="mb-3">
                             <label for="productPrice" class="form-label">Precio</label>
                             <input type="number" class="form-control" id="productPrice" name="productPrice" placeholder="Precio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productCategory" class="form-label">Categoría</label>
+                            <select class="form-control" id="productCategory" name="productCategory" required>
+                                <option value="Material para tatuar">Material para tatuar</option>
+                                <option value="Material para perforar">Material para perforar</option>
+                                <option value="Piezas para perforacion">Piezas para perforación</option>
+                                <option value="Productos para sustancias">Productos para sustancias</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="productImage" class="form-label">Imagen del Producto</label>

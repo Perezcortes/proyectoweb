@@ -124,7 +124,7 @@ tr:nth-child(even) {
     border-radius: 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     background: #00a600;
-    margin-bottom: 20px;  /* Ajusta el margen inferior para separar el botón de la tabla */
+    margin-bottom: 25px;  /* Ajusta el margen inferior para separar el botón de la tabla */
   }
   
   button,

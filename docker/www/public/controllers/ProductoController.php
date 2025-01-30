@@ -1,11 +1,14 @@
 <?php
 require_once '../models/add_product.php';
 
+$product = new Product();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productName = $_POST['productName'];
     $productQuantity = $_POST['productQuantity'];
     $productDescription = $_POST['productDescription'];
     $productPrice = $_POST['productPrice'];
+    $productCategory = $_POST['productCategory'];
 
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['productImage']['tmp_name'];
@@ -24,8 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($fileTmpPath, $dest_path)) {
                 $productImage = 'img/' . $newFileName;
 
-                $product = new Product();
-                $result = $product->addProduct($productName, $productQuantity, $productDescription, $productPrice, $productImage);
+                $result = $product->addProduct($productName, $productQuantity, $productDescription, $productPrice, $productImage, $productCategory);
 
                 if ($result === 'success') {
                     echo json_encode(['result' => 'success']);
@@ -41,6 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo json_encode(['result' => 'no_file']);
     }
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $products = $product->readProducts();
+    echo json_encode($products);
 } else {
     echo json_encode(['result' => 'invalid_request']);
 }

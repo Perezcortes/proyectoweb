@@ -10,15 +10,16 @@ class Product {
         $this->conn = $database->getConnection();
     }
 
-    public function addProduct($productName, $productQuantity, $productDescription, $productPrice, $productImage) {
+    public function addProduct($productName, $productQuantity, $productDescription, $productPrice, $productImage, $productCategory) {
         try {
-            $query = "INSERT INTO " . $this->table_products . " (nombre, cantidad, descripcion, precio, imagen) VALUES (:nombre, :cantidad, :descripcion, :precio, :imagen)";
+            $query = "INSERT INTO " . $this->table_products . " (nombre, cantidad, descripcion, precio, imagen, categoria) VALUES (:nombre, :cantidad, :descripcion, :precio, :imagen, :categoria)";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':nombre', $productName);
             $stmt->bindParam(':cantidad', $productQuantity);
             $stmt->bindParam(':descripcion', $productDescription);
             $stmt->bindParam(':precio', $productPrice);
             $stmt->bindParam(':imagen', $productImage);
+            $stmt->bindParam(':categoria', $productCategory);
 
             if ($stmt->execute()) {
                 return 'success';

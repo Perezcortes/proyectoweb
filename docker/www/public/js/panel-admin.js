@@ -1,13 +1,23 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+  const inicioLink = document.getElementById("inicio-link");
   const usuariosLink = document.getElementById("usuarios-link");
   const productoLink = document.getElementById("producto-link"); // Selecciona el enlace del producto
   const inicioContent = document.getElementById("inicio-content");
   const usuariosContent = document.getElementById("usuarios-content");
   const productoContent = document.getElementById("producto-content"); // Selecciona el contenido del producto
-
+  const activeSection = localStorage.getItem("activeSection");
+  if (activeSection) {
+    showSection(activeSection);
+  } else {
+    showSection("inicio"); // Mostrar la sección de inicio por defecto
+  }
+  inicioLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    showSection("inicio");
+  });
   usuariosLink.addEventListener("click", async function (event) {
     event.preventDefault();
-
+    showSection("usuarios");
     inicioContent.style.display = "none";
     usuariosContent.style.display = "block";
 
@@ -45,12 +55,59 @@
     }
   });
 
+  //Localstorage
+  function showSection(section) {
+    inicioContent.style.display = "none";
+    usuariosContent.style.display = "none";
+    productoContent.style.display = "none";
+
+    switch (section) {
+      case "usuarios":
+        usuariosContent.style.display = "block";
+        break;
+      case "productos":
+        productoContent.style.display = "block";
+        break;
+      default:
+        inicioContent.style.display = "block";
+    }
+
+    // Guardar la sección activa en localStorage
+    localStorage.setItem("activeSection", section);
+  }
+
   productoLink.addEventListener("click", async function (event) {
     event.preventDefault();
+    showSection("productos");
     inicioContent.style.display = "none";
-    usuariosContent.style.display = "none"; // Oculta el contenido de los usuarios cuando se selecciona "producto"
     productoContent.style.display = "block";
-  });
+
+    try {
+        const response = await fetch("../controllers/ProductoController.php");
+        const products = await response.json();
+        const tbody = productoContent.querySelector("tbody");
+        tbody.innerHTML = ""; 
+        if (products.length > 0) {
+            products.forEach((product) => {
+                const row = `<tr>
+                                <td>${product.nombre}</td>
+                                <td>${product.cantidad}</td>
+                                <td>${product.precio}</td>
+                                <td>${product.categoria}</td>
+                                <td>${product.descripcion}</td>
+                                <td><button class='btn btn-danger btn-sm'>Eliminar</button></td>
+                             </tr>`;
+                tbody.innerHTML += row;
+            });
+        } else {
+            tbody.innerHTML = "<tr><td colspan='6' class='text-center'>No hay productos disponibles</td></tr>";
+        }
+    } catch (error) {
+        console.error("Error al cargar los productos:", error);
+        const tbody = productoContent.querySelector("tbody");
+        tbody.innerHTML = "<tr><td colspan='6' class='text-center'>Error al cargar los datos</td></tr>";
+    }
+});
 
   // Manejar clic en el botón Cerrar Sesión
   document
@@ -110,7 +167,9 @@
           icon: "success",
           confirmButtonText: "Aceptar",
         }).then(() => {
-          window.location.reload();
+          // Guardar la sección activa antes de recargar la página
+        localStorage.setItem("activeSection", "usuarios");
+        window.location.reload();
         });
         break;
       case "duplicate_email":
@@ -205,6 +264,8 @@ function handleAddProductResponse(result) {
         icon: "success",
         confirmButtonText: "Aceptar",
       }).then(() => {
+        // Guardar la sección activa antes de recargar la página
+        localStorage.setItem("activeSection", "productos");
         window.location.reload();
       });
       break;
