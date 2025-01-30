@@ -1,19 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel-administrador</title>
     <link rel="stylesheet" href="../css/panel-admin.css">
-    <!-- Fuente personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 </head>
-
 <body>
     <header class="header bg-dark text-white d-flex justify-content-between align-items-center p-3">
         <h1>Administrador</h1>
@@ -58,14 +53,12 @@
                                     <th>Nombre</th>
                                     <th>Correo</th>
                                     <th>Rol</th>
+                                    <th>Fecha de Creación</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Fila incluida para estructura -->
-                                <tr>
-                                    <td colspan="4" class="text-center">No hay datos disponibles</td>
-                                </tr>
+                                <!-- Aquí se llenarán los datos de los usuarios -->
                             </tbody>
                         </table>
                     </div>
@@ -116,9 +109,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/panel-admin.js"></script>
 </body>
-
 </html>

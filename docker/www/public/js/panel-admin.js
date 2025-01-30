@@ -1,17 +1,31 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
     const usuariosLink = document.getElementById('usuarios-link');
     const inicioContent = document.getElementById('inicio-content');
     const usuariosContent = document.getElementById('usuarios-content');
 
-    usuariosLink.addEventListener('click', function(event) {
-        event.preventDefault();  // Evita que el enlace se comporte de manera predeterminada
+    usuariosLink.addEventListener('click', async function (event) {
+        event.preventDefault();
 
         inicioContent.style.display = 'none';
         usuariosContent.style.display = 'block';
-    });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+        try {
+            const response = await fetch(`../controllers/add_user.php?timestamp=${new Date().getTime()}`);
+            const html = await response.text();
+
+            console.log("Response HTML:", html);
+
+            const tbody = usuariosContent.querySelector("tbody");
+            tbody.innerHTML = html; // Insertar directamente el HTML recibido
+
+        } catch (error) {
+            console.error("Error al cargar los usuarios:", error);
+            const tbody = usuariosContent.querySelector("tbody");
+            tbody.innerHTML = "<tr><td colspan='5' class='text-center'>Error al cargar los datos</td></tr>";
+        }
+    });
+
+    // Manejar clic en el botón Cerrar Sesión
     document.getElementById("logoutButton").addEventListener("click", function () {
         Swal.fire({
             title: "Cerrar Sesión",
@@ -27,19 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.getElementById("usuarios-link").addEventListener("click", function () {
-        document.getElementById("inicio-content").style.display = "none";
-        document.getElementById("usuarios-content").style.display = "block";
-    });
-});
-
-//Modal para agregar usuario con rol
-document.addEventListener("DOMContentLoaded", () => {
+    // Manejar envío del formulario para agregar usuarios
     const addUserForm = document.getElementById("addUserForm");
-
-    document.getElementById("addUserForm").addEventListener("submit", async function (event) {
+    addUserForm.addEventListener("submit", async function (event) {
         event.preventDefault();
-        
+
         const formData = new FormData(addUserForm);
         const email = formData.get("email");
 
@@ -90,18 +96,16 @@ document.addEventListener("DOMContentLoaded", () => {
             showErrorAlert("Hubo un problema al procesar la solicitud. Inténtalo de nuevo más tarde.");
         }
     });
-    
+
     function showErrorAlert(message) {
         Swal.fire({
             title: "Error",
             text: message,
             icon: "error",
             confirmButtonText: "Aceptar",
-            showCancelButton: true,
-            cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.dismiss === Swal.DismissReason.cancel) {
-                document.getElementById("addUserForm").reset();
+                addUserForm.reset();
                 const modalElement = document.getElementById("addUserModal");
                 const modalInstance = bootstrap.Modal.getInstance(modalElement);
                 if (modalInstance) {

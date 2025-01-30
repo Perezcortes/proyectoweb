@@ -1,17 +1,19 @@
-﻿<?php
-require_once '../config/database.php';
+﻿<?php require_once '../config/database.php';
 
-class User {
+class User
+{
     private $conn;
     private $table_roles = "roles";
     private $table_users = "usuarios";
 
-    public function __construct() {
+    public function __construct()
+    {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
 
-    public function addUser($username, $email, $password, $pin, $role) {
+    public function addUser($username, $email, $password, $pin, $role)
+    {
         if (!$this->isUniqueEmail($email)) {
             return 'duplicate_email';
         }
@@ -64,7 +66,28 @@ class User {
         }
     }
 
-    private function isUniqueEmail($email) {
+    // Método para leer usuarios y sus roles
+    public function readUsuarios() {
+        $query = "SELECT u.id_usuario, u.nombre, u.correo, u.fecha_creacion, 
+                         COALESCE(r.rol, 'user') AS rol
+                  FROM " . $this->table_users . " u
+                  LEFT JOIN " . $this->table_roles . " r
+                  ON u.id_rol = r.id_rol";
+    
+        error_log("Consulta SQL: " . $query); // Depuración
+    
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+    
+        $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        error_log("Resultado de la consulta: " . print_r($usuarios, true)); // Depuración
+    
+        return $usuarios;
+    }    
+    
+    private function isUniqueEmail($email)
+    {
         $query = "SELECT COUNT(*) FROM " . $this->table_users . " WHERE correo = :correo";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':correo', $email);
@@ -72,7 +95,8 @@ class User {
         return $stmt->fetchColumn() == 0;
     }
 
-    private function isUniqueUsername($username) {
+    private function isUniqueUsername($username)
+    {
         $query = "SELECT COUNT(*) FROM " . $this->table_users . " WHERE nombre = :nombre";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nombre', $username);
@@ -80,4 +104,3 @@ class User {
         return $stmt->fetchColumn() == 0;
     }
 }
-?>

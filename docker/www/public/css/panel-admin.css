@@ -65,12 +65,12 @@ body {
 
 /* Estilos de la tabla */
 table {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ab1b1b;
 }
 
 th, td {
@@ -79,8 +79,8 @@ th, td {
 }
 
 th {
-    background-color: #343a40;
-    color: white;
+    background-color: #68a36b;
+    color: rgb(0, 0, 0);
 }
 
 tr:nth-child(even) {
