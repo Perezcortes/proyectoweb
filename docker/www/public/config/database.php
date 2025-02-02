@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class Database
 {
     private $host = "mysql";
