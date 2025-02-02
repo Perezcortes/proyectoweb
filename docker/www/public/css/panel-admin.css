@@ -133,10 +133,11 @@ tr:nth-child(even) {
   }
   
   button .text {
-    transform: translateX(25px);  /* Ajustar la posición del texto */
+    transform: translateX(15px);  /* Ajustar la posición del texto */
     color: white;
     font-weight: bold;
     font-size: 12px;  /* Ajustar el tamaño de la fuente */
+    text-align: center;
   }
   
   button .icon {
