@@ -29,7 +29,7 @@
         <!-- Menú colapsable -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Citas</a></li>
+                <li class="nav-item"><a class="nav-link" href="./views/citas.php">Citas</a></li>
                 <li class="nav-item"><a class="nav-link" href="./views/tatuadores.php">Tatuadores</a></li>
                 <li class="nav-item"><a class="nav-link" href="./views/productos.php">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="./views/percing.php">Perforaciones</a></li>
