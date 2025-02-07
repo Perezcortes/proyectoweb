@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deja Vu Body Art</title>
+    <link rel="icon" type="image/png" href="../img/dj1.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,13 +14,19 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        
+    <nav class="navbar navbar-expand-lg fixed-top">
         <!-- Logo -->
         <a class="navbar-brand" href="./index.php">
             <img src="./img/dj1.png" width="90" height="85" alt="logo" class="d-inline-block align-top">
         </a>
-        <!-- NavBar -->
+
+        <!-- Botón para pantallas pequeñas (menú hamburguesa) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Citas</a></li>
@@ -28,11 +35,12 @@
                 <li class="nav-item"><a class="nav-link" href="./views/percing.php">Perforaciones</a></li>
             </ul>
         </div>
-        <!-- Login/Register Button -->
-        <button class="btn btn-outline-primary" type="button" onclick="window.location.href='./views/login.php';" aria-label="Iniciar sesión o registrarse">
+
+        <!-- Botón de Iniciar Sesión -->
+        <button class="btn btn-outline-primary" type="button" onclick="window.location.href='./views/login.php';"
+            aria-label="Iniciar sesión o registrarse">
             <i class="fas fa-user"></i> Iniciar Sesión
         </button>
-
     </nav>
 
     <!-- Main Section -->
@@ -112,6 +120,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

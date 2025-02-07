@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
+    <link rel="icon" type="image/png" href="../img/dj1.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/login-admin.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

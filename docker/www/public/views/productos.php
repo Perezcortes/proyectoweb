@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deja Vu Body Art</title>
+    <link rel="icon" type="image/png" href="../img/dj1.png">
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -17,7 +18,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand" href="#">Deja Vu Body Art</a>
+        <a class="navbar-brand" href="../views/productos.php">Deja Vu Body Art</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,12 +26,6 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="../index.php">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
                 </li>
             </ul>
             <form class="form-inline ml-auto">
