@@ -1,0 +1,352 @@
+﻿/* Reiniciamos márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Cuerpo de la página */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7ff; /* Un color suave */
+  }
+
+/* Estilos personalizados para el navbar */
+.navbar {
+    padding: 1.5rem 0;
+    background-image: linear-gradient(to right, #292826, #0f0f0feb) !important;
+    box-shadow: 0 4px 15px rgba(148, 146, 146, 0.2);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: "Big Shoulders Inline Display", serif !important; /* Fuente medieval */
+    font-size: 2rem !important; /* Tamaño aumentado */
+    font-weight: 600;
+    letter-spacing: 2px !important; /* Mayor espaciado */
+    color: #000 !important; /* Color negro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important; /* Sombra de texto */
+}
+
+.navbar-nav .nav-item {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    font-family: 'Arial', sans-serif !important; /* Fuente contrastante para items */
+    font-size: 1.2rem !important;
+    padding: 0.8rem 1.2rem !important;
+    color: #000 !important; /* Color negro */
+    border-radius: 5px;
+    transition: all 0.3s ease !important;
+}
+
+.nav-link:hover {
+    background-color: #f3f0ed !important;
+    transform: translateY(-2px);
+}
+
+.nav-item.active .nav-link {
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border: 2px solid rgba(197, 190, 190, 0.5) !important;
+    padding: 0.6rem 0.8rem;
+}
+
+.navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Fuente alternativa por si no carga Old English */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+/* Contenedor de la imagen */
+.navbar-external-image {
+    height: 80px; /* Tamaño más grande para destacar */
+    width: auto;
+    position:static;
+    left: -5px;
+    top: 2px; /* Ajuste para posición vertical */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+/* Ajustar padding para no solapar contenido */
+.navbar .container {
+    padding-left: 2px; /* Espacio para la imagen */
+}
+
+/* Efecto hover */
+.navbar-external-image:hover {
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive para móviles */
+@media (max-width: 991.98px) {
+    .navbar-external-image {
+        height: 50px;
+        top: -10px;
+        left: 10px;
+    }
+    
+    .navbar .container {
+        padding-left: 70px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-family: 'UnifrakturMaguntia', cursive !important; /* Fuente web similar */
+        font-size: 1.7rem !important;
+    }
+}
+  
+  /* Media query para mobile */
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      padding-top: 1rem;
+    }
+    
+    .nav-link {
+      margin-bottom: 0.5rem;
+    }
+    
+    .nav-item.active .nav-link {
+      background-color: transparent !important;
+    }
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 600px; /* Aumenté el ancho máximo */
+    margin: 0 auto;
+    padding: 20px; /* Agregué padding para que no quede pegado a los bordes */
+}
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+
+  form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #e6e8e8;
+    padding: 30px; /* Más espacio interno */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(39, 38, 37, 0.833);
+    max-width: 600px;
+    width: 100%;
+}
+  
+  h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px; /* Aumenté el margen inferior */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  /* Estilos para el input de Whatsapp */
+  .whatsapp-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .whatsapp-input select {
+    flex: 1;
+  }
+  
+  .whatsapp-input input {
+    flex: 2;
+  }
+  
+  /* Secciones adicionales */
+  .additional-section {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para la subida de archivos */
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 18px;
+  }
+  
+  .custum-file-upload {
+    height: 200px; /* Aumenté la altura */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #bb5203b6;
+    background-color: #fff;
+    padding: 2rem; /* Más espacio interno */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(210, 94, 5, 0.2);
+    text-align: center;
+}
+  
+  .custum-file-upload .icon svg {
+    height: 70px;
+    fill: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload .text span {
+    font-size: 18px;
+    color: rgba(75, 85, 99, 1);
+  }
+  
+  .custum-file-upload input {
+    display: none;
+  }
+
+  .upload-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ff9800;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-form {
+    background: linear-gradient(135deg, #4CAF50, #45a049, #2d6d30);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 18px 25px;
+    font-size: 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.btn-form::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 25%,
+        rgba(255, 255, 255, 0.2) 25%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 50%,
+        transparent 75%,
+        rgba(255, 255, 255, 0.2) 75%);
+    transform: rotate(45deg);
+    animation: buttonShine 3s infinite linear;
+    opacity: 0.6;
+}
+
+@keyframes buttonShine {
+    0% { transform: translateX(-150%) rotate(45deg); }
+    100% { transform: translateX(150%) rotate(45deg); }
+}
+
+/* Efecto hover */
+.btn-form:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+    background: linear-gradient(135deg, #45a049, #4CAF50, #37833b);
+}
+
+/* Efecto al hacer click */
+.btn-form:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Borde animado */
+.btn-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    animation: borderPulse 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes borderPulse {
+    0% { border-color: rgba(255, 255, 255, 0.2); }
+    50% { border-color: rgba(255, 255, 255, 0.5); }
+    100% { border-color: rgba(255, 255, 255, 0.2); }
+}
+
+/* Efecto de ondas al hacer hover */
+.btn-form:hover::after {
+    animation-duration: 1.5s;
+    opacity: 0.8;
+}
+  
+/* Responsive para mejorar en móviles */
+@media (max-width: 600px) {
+    .form-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    input, select, textarea, button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .custum-file-upload {
+        height: auto;
+        padding: 1.5rem;
+    }
+}

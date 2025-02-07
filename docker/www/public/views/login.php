@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <title>Inicio-Registro</title>
   <link rel="icon" type="image/png" href="../img/dj1.png">
   <link rel="stylesheet" href="../css/login_dark.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,13 +15,34 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="../index.php">Inicio</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
+  <!-- From Uiverse.io by SelfMadeSystem -->
+  <div class="nav">
+    <div class="container-nav">
+      <div class="btn"><a href="../index.php">Inicio</a></div>
+      <div class="btn"><a href="../views/tatuadores.php">Tatuadores</a></div>
+      <div class="btn"><a href="https://wa.me/529531447499">Contacto</a></div>
+
+
+      <svg
+        class="outline"
+        overflow="visible"
+        width="400"
+        height="60"
+        viewBox="0 0 400 60"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect
+          class="rect"
+          pathLength="100"
+          x="0"
+          y="0"
+          width="400"
+          height="60"
+          fill="transparent"
+          stroke-width="5"></rect>
+      </svg>
+    </div>
+  </div>
+
   <header>
     <h1>Bienvenido</h1>
   </header>
