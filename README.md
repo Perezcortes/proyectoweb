@@ -1,15 +1,16 @@
 # Proyecto Web con PHP, MySQL, Apache y Docker
 
 ## Descripción
-Este proyecto es una aplicación web desarrollada con PHP y MySQL, ejecutándose sobre un servidor Apache dentro de un contenedor Docker. Su propósito es gestionar compras en línea, permitiendo a los usuarios realizar pedidos, administrar clientes y gestionar entregas de manera eficiente.
+Este proyecto es una aplicación web desarrollada con PHP y MySQL para el negocio denominado Deja Vu Body Art, ejecutándose sobre un servidor Apache dentro de un contenedor Docker. Su propósito es automatizar tareas diarias, permitiendo a los usuarios realizar citas y cotizaciones, permitiendo conocer el trabajo de los tatuadores y su estilo, por parte del administrador, administrar clientes y gestionar inventarios de todos sus productos ademas de acciones de actualizacion y edicion en ellos.
 
 ## Características Principales
 - **Arquitectura Cliente-Servidor**: Implementada con PHP en el backend y HTML, CSS y JavaScript en el frontend.
-- **Gestión de Usuarios y Clientes**: Permite agregar, modificar y eliminar clientes.
-- **Administración de Pedidos y Entregas**: Manejo de órdenes de compra y seguimiento de entregas.
+- **Uso de MVC**: patrón de diseño arquitectónico que separa la lógica de una aplicación en tres componentes principales para mejorar la organización, mantenibilidad y escalabilidad del código.
+- **Gestión de Usuarios y Clientes**: Permite agregar, modificar, eliminar clientes y asignar roles.
+- **Administración de cotizaciones y citas**: Manejo de citas, solicitudes de informacion para otros servicios que se ofrecen como rentas de espacios para tatuar, colocacion de implantes en genitales, remover tatuajes etc.
 - **Seguridad Mejorada**: Uso de hashing de contraseñas, validaciones de entrada y protección contra inyecciones SQL.
 - **Dockerización**: Implementado dentro de un entorno Docker para facilitar la configuración y despliegue.
-- **Gestión de Base de Datos**: Utiliza MySQL para almacenar información estructurada de clientes, pedidos y paquetes.
+- **Gestión de Base de Datos**: Utiliza MySQL para almacenar información estructurada de clientes, citas, productos, usuarios.
 
 ## Tecnologías Utilizadas
 - **Backend**: PHP 8+
@@ -29,7 +30,7 @@ Asegúrate de tener instalados:
 ### Pasos de Instalación
 1. Clona este repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/tu-repositorio.git
+   git clone https://github.com/Perezcortes/proyectoweb.git
    cd tu-repositorio
    ```
 2. Copia el archivo de configuración de entorno:
@@ -56,7 +57,7 @@ Asegúrate de tener instalados:
 ## Uso de la Aplicación
 ### Creación de un Usuario
 1. Ingresa a la aplicación.
-2. Navega a la sección de "Registro" y completa los datos.
+2. Navega a la sección de "Iniciar Sesión" y completa los datos.
 3. Inicia sesión con las credenciales creadas.
 
 ### Gestión de Pedidos
@@ -72,24 +73,61 @@ Asegúrate de tener instalados:
 
 ## Estructura del Proyecto
 ```
-📂 tu-repositorio
-├── 📂 src
-│   ├── 📂 controllers
-│   ├── 📂 models
-│   ├── 📂 views
-│   ├── 📂 config
-│   ├── index.php
-├── 📂 database
-│   ├── init.sql
-├── 📂 docker
-│   ├── Dockerfile
-│   ├── docker-compose.yml
-├── 📂 public
-│   ├── css
-│   ├── js
-│   ├── img
-├── .env.example
-├── README.md
+Directory structure:
+└── perezcortes-proyectoweb/
+    ├── README.md
+    └── docker/
+        ├── Dockerfile
+        ├── docker-compose.yml
+        └── www/
+            └── public/
+                ├── index.php
+                ├── login.php
+                ├── register.php
+                ├── config/
+                │   └── database.php
+                ├── controllers/
+                │   ├── AccionProductos.php
+                │   ├── AdminController.php
+                │   ├── AuthController.php
+                │   ├── ProductoController.php
+                │   ├── TatuadorController.php
+                │   └── add_user.php
+                ├── css/
+                │   ├── index.css
+                │   ├── login-admin.css
+                │   ├── login_dark.css
+                │   ├── login_light.css
+                │   ├── panel-admin.css
+                │   ├── percing.css
+                │   ├── productos.css
+                │   └── tatuadores.css
+                ├── img/
+                ├── js/
+                │   ├── admin-login.js
+                │   ├── index.js
+                │   ├── login.js
+                │   ├── panel-admin.js
+                │   ├── percing.js
+                │   ├── seccion-productos.js
+                │   └── tatuadores.js
+                ├── models/
+                │   ├── AccionesProductos.php
+                │   ├── add_product.php
+                │   ├── add_user.php
+                │   ├── admin.php
+                │   ├── modeloTatuador.php
+                │   ├── percing.php
+                │   └── user.php
+                └── views/
+                    ├── footer.php
+                    ├── login-admin.php
+                    ├── login.php
+                    ├── panel-admin.php
+                    ├── percing.php
+                    ├── productos.php
+                    └── tatuadores.php
+
 ```
 
 ## Contribución
@@ -104,5 +142,8 @@ Si deseas contribuir, sigue estos pasos:
 Este proyecto está bajo la licencia MIT. Puedes ver más detalles en el archivo `LICENSE`.
 
 ## Contacto
-Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de [tu-email@ejemplo.com] o creando un issue en este repositorio.
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de 9531447499a@gmail.com o creando un issue en este repositorio.
+
+## Creado por:
+Jose Perez y Yamil Morales
 
