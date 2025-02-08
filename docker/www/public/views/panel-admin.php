@@ -47,6 +47,7 @@
                     </div>
                     <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addUserModal">Agregar Nuevo Usuario</button>
                 </div>
+                <!-- Aquí esta la seccion de usuarios -->
                 <div id="usuarios-content" style="display: none;">
                     <h2 class="mt-3">Usuarios</h2>
                     <div class="table-responsive">
