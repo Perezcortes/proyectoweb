@@ -1,25 +1,27 @@
 # Proyecto Web con PHP, MySQL, Apache y Docker
 
 ## Descripción
-Este proyecto es una aplicación web desarrollada con PHP y MySQL para el negocio denominado Deja Vu Body Art, ejecutándose sobre un servidor Apache dentro de un contenedor Docker. Su propósito es automatizar tareas diarias, permitiendo a los usuarios realizar citas y cotizaciones, permitiendo conocer el trabajo de los tatuadores y su estilo, por parte del administrador, administrar clientes y gestionar inventarios de todos sus productos ademas de acciones de actualizacion y edicion en ellos.
+Este proyecto es una aplicación web desarrollada con PHP y MySQL para el negocio denominado Deja Vu Body Art, ejecutándose sobre un servidor Apache dentro de un contenedor Docker. Su propósito es automatizar tareas diarias, permitiendo a los usuarios realizar citas y cotizaciones, conocer el trabajo de los tatuadores y su estilo. Para el administrador, permite gestionar clientes e inventarios de productos, además de realizar acciones de actualización y edición.
 
 ## Características Principales
-- **Arquitectura Cliente-Servidor**: Implementada con PHP en el backend y HTML, CSS y JavaScript en el frontend.
-- **Uso de MVC**: patrón de diseño arquitectónico que separa la lógica de una aplicación en tres componentes principales para mejorar la organización, mantenibilidad y escalabilidad del código.
-- **Gestión de Usuarios y Clientes**: Permite agregar, modificar, eliminar clientes y asignar roles.
-- **Administración de cotizaciones y citas**: Manejo de citas, solicitudes de informacion para otros servicios que se ofrecen como rentas de espacios para tatuar, colocacion de implantes en genitales, remover tatuajes etc.
-- **Seguridad Mejorada**: Uso de hashing de contraseñas, validaciones de entrada y protección contra inyecciones SQL.
-- **Dockerización**: Implementado dentro de un entorno Docker para facilitar la configuración y despliegue.
-- **Gestión de Base de Datos**: Utiliza MySQL para almacenar información estructurada de clientes, citas, productos, usuarios.
+- **📡 Arquitectura Cliente-Servidor**: Implementada con PHP en el backend y HTML, CSS y JavaScript en el frontend.
+- **📌 Uso de MVC**: Patrón de diseño arquitectónico que separa la lógica de una aplicación en tres componentes principales para mejorar la organización, mantenibilidad y escalabilidad del código.
+- **👥 Gestión de Usuarios y Clientes**: Permite agregar, modificar, eliminar clientes y asignar roles.
+- **📅 Administración de cotizaciones y citas**: Manejo de citas y solicitudes de información para otros servicios que se ofrecen.
+- **🔒 Seguridad Mejorada**: Uso de hashing de contraseñas, validaciones de entrada y protección contra inyecciones SQL.
+- **🐳 Dockerización**: Implementado dentro de un entorno Docker para facilitar la configuración y despliegue.
+- **🗄️ Gestión de Base de Datos**: Utiliza MySQL para almacenar información estructurada de clientes, citas, productos y usuarios.
+- **🔄 Manejo de versiones**: Se utilizó Git con gestión a través de Sourcetree.
 
 ## Tecnologías Utilizadas
-- **Backend**: PHP 8+
-- **Base de Datos**: MySQL 8+
-- **Servidor Web**: Apache
-- **Frontend**: HTML, CSS, JavaScript
-- **Gestión de Dependencias**: Composer
-- **Virtualización**: Docker y Docker Compose
-- **Herramientas de Administración**: phpMyAdmin
+- **⚙️ Backend**: PHP 8+
+- **🛢️ Base de Datos**: MySQL 8+
+- **🌐 Servidor Web**: Apache
+- **🎨 Frontend**: HTML, CSS, JavaScript
+- **📦 Gestión de Dependencias**: Composer
+- **🐳 Virtualización**: Docker y Docker Compose
+- **🛠️ Herramientas de Administración**: phpMyAdmin
+- **🔄 Control de Versiones**: Git con manejo a través de Sourcetree
 
 ## Instalación y Configuración
 ### Requisitos Previos
@@ -31,7 +33,7 @@ Asegúrate de tener instalados:
 1. Clona este repositorio:
    ```sh
    git clone https://github.com/Perezcortes/proyectoweb.git
-   cd tu-repositorio
+   cd proyectoweb
    ```
 2. Copia el archivo de configuración de entorno:
    ```sh
@@ -66,68 +68,60 @@ Asegúrate de tener instalados:
 3. Visualiza el historial de pedidos y entrega.
 
 ## Seguridad Implementada
-- Hashing de contraseñas con `password_hash()`.
-- Validaciones de entrada para prevenir inyecciones SQL y ataques XSS.
-- Autenticación y autorización de usuarios basada en roles.
-- Manejo seguro de sesiones.
+- 🔑 Hashing de contraseñas con `password_hash()`.
+- 🛡️ Validaciones de entrada para prevenir inyecciones SQL y ataques XSS.
+- 👤 Autenticación y autorización de usuarios basada en roles.
+- 🔒 Manejo seguro de sesiones.
 
-## Estructura del Proyecto
+## 📂 Estructura del Proyecto
 ```
-Directory structure:
-└── perezcortes-proyectoweb/
-    ├── README.md
-    └── docker/
-        ├── Dockerfile
-        ├── docker-compose.yml
-        └── www/
-            └── public/
-                ├── index.php
-                ├── login.php
-                ├── register.php
-                ├── config/
-                │   └── database.php
-                ├── controllers/
-                │   ├── AccionProductos.php
-                │   ├── AdminController.php
-                │   ├── AuthController.php
-                │   ├── ProductoController.php
-                │   ├── TatuadorController.php
-                │   └── add_user.php
-                ├── css/
-                │   ├── index.css
-                │   ├── login-admin.css
-                │   ├── login_dark.css
-                │   ├── login_light.css
-                │   ├── panel-admin.css
-                │   ├── percing.css
-                │   ├── productos.css
-                │   └── tatuadores.css
-                ├── img/
-                ├── js/
-                │   ├── admin-login.js
-                │   ├── index.js
-                │   ├── login.js
-                │   ├── panel-admin.js
-                │   ├── percing.js
-                │   ├── seccion-productos.js
-                │   └── tatuadores.js
-                ├── models/
-                │   ├── AccionesProductos.php
-                │   ├── add_product.php
-                │   ├── add_user.php
-                │   ├── admin.php
-                │   ├── modeloTatuador.php
-                │   ├── percing.php
-                │   └── user.php
-                └── views/
-                    ├── footer.php
-                    ├── login-admin.php
-                    ├── login.php
-                    ├── panel-admin.php
-                    ├── percing.php
-                    ├── productos.php
-                    └── tatuadores.php
-
+📂 proyectoweb/
+ ├── 📄 README.md
+ ├── 📂 docker/
+ │   ├── 📄 Dockerfile
+ │   ├── 📄 docker-compose.yml
+ │   └── 📂 www/
+ │       ├── 📂 public/
+ │       │   ├── 📄 index.php
+ │       │   ├── 📄 login.php
+ │       │   ├── 📄 register.php
+ │       │   ├── 📂 config/
+ │       │   │   └── 📄 database.php
+ │       │   ├── 📂 controllers/
+ │       │   │   ├── 📄 AccionProductos.php
+ │       │   │   ├── 📄 AdminController.php
+ │       │   │   ├── 📄 AuthController.php
+ │       │   │   ├── 📄 ProductoController.php
+ │       │   │   ├── 📄 TatuadorController.php
+ │       │   │   └── 📄 add_user.php
+ │       │   ├── 📂 css/
+ │       │   │   ├── 🎨 index.css
+ │       │   │   ├── 🎨 login-admin.css
+ │       │   │   ├── 🎨 panel-admin.css
+ │       │   │   ├── 🎨 productos.css
+ │       │   │   └── 🎨 tatuadores.css
+ │       │   ├── 📂 img/
+ │       │   ├── 📂 js/
+ │       │   │   ├── 📜 admin-login.js
+ │       │   │   ├── 📜 index.js
+ │       │   │   ├── 📜 login.js
+ │       │   │   ├── 📜 panel-admin.js
+ │       │   │   ├── 📜 productos.js
+ │       │   │   └── 📜 tatuadores.js
+ │       │   ├── 📂 models/
+ │       │   │   ├── 📄 AccionesProductos.php
+ │       │   │   ├── 📄 add_product.php
+ │       │   │   ├── 📄 add_user.php
+ │       │   │   ├── 📄 admin.php
+ │       │   │   ├── 📄 modeloTatuador.php
+ │       │   │   └── 📄 user.php
+ │       │   └── 📂 views/
+ │       │       ├── 📄 footer.php
+ │       │       ├── 📄 login-admin.php
+ │       │       ├── 📄 login.php
+ │       │       ├── 📄 panel-admin.php
+ │       │       ├── 📄 productos.php
+ │       │       └── 📄 tatuadores.php
 ```
 
 ## Contribución
