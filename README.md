@@ -35,23 +35,18 @@ Asegúrate de tener instalados:
    git clone https://github.com/Perezcortes/proyectoweb.git
    cd proyectoweb
    ```
-2. Copia el archivo de configuración de entorno:
-   ```sh
-   cp .env.example .env
-   ```
-   Edita `.env` con las credenciales de tu base de datos si es necesario.
 
-3. Construye y ejecuta los contenedores con Docker Compose:
+2. Construye y ejecuta los contenedores con Docker Compose:
    ```sh
    docker-compose up -d
    ```
 
-4. Accede a la aplicación en tu navegador en:
+3. Accede a la aplicación en tu navegador en:
    ```
-   http://localhost
+   http://localhost:8086
    ```
 
-5. Si necesitas acceder a phpMyAdmin, usa:
+4. Si necesitas acceder a phpMyAdmin, usa:
    ```
    http://localhost:8080
    ```
@@ -123,6 +118,13 @@ Asegúrate de tener instalados:
  │       │       ├── 📄 productos.php
  │       │       └── 📄 tatuadores.php
 ```
+
+## Imagenes de la pagina
+Dentro de este repositorio podras encontrar algunas imagenes de la pagina:
+Accede a el y dirigete a la carpeta llamada "Images"
+```sh
+   https://github.com/Perezcortes/Programaci-n-web-1.git
+   ```
 
 ## Contribución
 Si deseas contribuir, sigue estos pasos:
