@@ -140,6 +140,6 @@ Este proyecto está bajo la licencia MIT. Puedes ver más detalles en el archivo
 ## Contacto
 Si tienes alguna pregunta o sugerencia, no dudes en contactarme a través de 9531447499a@gmail.com o creando un issue en este repositorio.
 
-## Creado por:
-Jose Perez y Yamil Morales
+## Equipo de desarrollo:
+Morales Diaz Amaury Yamil y Perez Cortes Jose Alberto
 
