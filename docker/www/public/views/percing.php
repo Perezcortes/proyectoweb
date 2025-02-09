@@ -6,43 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deja Vu - Perforaciones</title>
     <link rel="icon" type="image/png" href="../img/dj1.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/percing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Flatpickr CSS calendario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/percing.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- jQuery (necesario para Datepicker) -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
     <!-- Bootstrap Bundle JS (con Popper incluido) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Bootstrap Datepicker CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
-    <!-- Bootstrap Datepicker JS -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-
-
+    <script src="../js/contenido_percing.js"></script>
 </head>
+
+<style>
+     .modal-content {
+  background-color: #181617 !important; /* Color de fondo */
+  color: white !important; /* Color del texto */
+}
+
+ .modal-header {
+  background-color: #181617 !important;
+  border-bottom: 2px solid #E07FAB !important;
+}
+
+ .modal-footer {
+  background-color: #181617 !important;
+  border-top: 2px solid #E07FAB !important;
+}
+
+
+</style>
 
 <body class="fondo">
     <!--nav bar, se mestra el logo de la empresa y el titulo de la pag en la que se encuentra-->
@@ -66,36 +64,21 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Inicio</a>
+                    <a class="nav-link" href="./index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./productos.html">Productos</a>
+                    <a class="nav-link" href="./productos.php">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./login.html">Contacto</a>
+                    <a class="nav-link" href="./login.php">Contacto</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="d-flex justify-content-between align-items-center w-100">
-        <!-- Botón alineado a la izquierda -->
-        <div>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Perforaciones
-                </button>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button">Action</button></li>
-                    <li><button class="dropdown-item" type="button">Another action</button></li>
-                    <li><button class="dropdown-item" type="button">Something else here</button></li>
-                </ul>
-            </div>
-        </div>
-
         <!-- Buscador alineado a la derecha -->
-        <div class="buscador">
+        <div class="buscador ms-auto">
             <form class="form">
                 <label for="search">
                     <input required="" autocomplete="off" placeholder="Filtrar contenido" id="search" type="text">
@@ -123,20 +106,18 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Formulario de registro</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Registra tu cita </h1>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label for="Email" class="col-form-label">Correo electronico:</label>
                             <input id="Email" type="text" class="form-control" name="email" required>
-                            <div id="emailHelp" class="form-text">*Es necesario que el correo electronico esté
-                                previamente registrado*</div>
+                          <label  class="col-form-label-sm">*El correo electronioco debe estra prebiamente registrado*</label>
                         </div>
                         <div class="mb-3">
                             <label for="Nombre" class="col-form-label">Nombre del cliente:</label>
@@ -148,6 +129,17 @@
                             <input id="datepicker" type="text" class="border border-gray-300 rounded-md p-2 w-64 mt-2"
                                 name="fecha" required>
                         </div>
+                        
+                        <!-- Reloj -->
+                        <div class="mb-3">
+                            
+                        <p id="selectHour" class="text-primary" style="cursor: pointer;" onclick="toggleHours()">Hora de la cita:</p>
+                        <input type="hidden" id="hiddenHour" name="hora">
+                        <div id="hourButtons" class="d-none">
+                          
+                        </div>
+                    </div>
+
 
                     </form>
                 </div>
@@ -155,7 +147,12 @@
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-info" id="liveToastBtn">Reservar cita</button>
 
-                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
                                 <strong class="me-auto">Deja vu</strong>
@@ -163,53 +160,23 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="toast"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="toast-body">
+                            <div class="toast-body " >
                                 Tu cita fue registrada con exito c:.
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--contenido  de la pag-->
-    <div class="container ">
-        <div class="row mx-auto">
-
-            <h3 class="titulo">PIERCING HELIX</h3>
-            <p>Actualmente, es de los piercing más populares entre las personas que deciden hacerse uno por primera vez
-                y quizá sea el comienzo de una forma de adueñarte de tu propio cuerpo.</p>
-            <div class="left-column col-md-5">
-                <!--imagen del contenedor-->
-                <img src="../img/Percing_helix.png" alt="Helix Piercing" class="img-fluid">
-                <!--botones de contenedor-->
-                <div class="boton">
-                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agendar cita</button>
-                    <button type="button" class="btn btn-outline-success">WhatsApp</button>
-                </div>
-            </div>
-            <div class="right-column col-md-7">
-                <h3 class="titulo">Descripción</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pellentesque metus id
-                    lacinia. Nunc dapibus pulvinar auctor.</p>
-                <h3 class="titulo">Tipo de joyería recomendada</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pellentesque metus id
-                    lacinia. Nunc dapibus pulvinar auctor. Duis nec sem at orci commodo viverra id in ipsum.</p>
-                <h3 class="titulo">Tiempo de cicatrización</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pellentesque metus id
-                    lacinia.</p>
-                <h3 class="titulo">Índice de dolor</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pellentesque metus id
-                    lacinia. Nunc dapibus pulvinar auctor. Duis nec sem at orci commodo viverra id in ipsum.</p>
-            </div>
+    <div class="container mt-4">
+    <!-- Contenedor donde se insertarán las tarjetas o el detalle -->
+    <div id="contenido">
+        <div class="row  g-3" id="card-container">
+            <!-- Aquí se insertarán dinámicamente las tarjetas con JavaScript -->
         </div>
     </div>
-    </div>
+</div>
     <!-- Incluir el Footer -->
     <?php include './footer.php'; ?>
-    <script src="../js/percing.js"></script>
+    <script src="../js/citas_percing.js"></script>
 </body>
 
 </html>
