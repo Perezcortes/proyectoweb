@@ -229,7 +229,8 @@
     font-family: "Big Shoulders Inline Display", serif;
     font-size: 4.5rem; /* Ajustar el tamaño de la fuente */
     text-align: center; /* Centrar el texto */
-    transition: color 0.3s ease, border 0.3s ease; /* Transiciones suaves */}
+    transition: color 0.3s ease, border 0.3s ease; /* Transiciones suaves */
+}
 
 /* Efecto al pasar el cursor */
 .mt-5:hover {

@@ -45,11 +45,119 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h2>Bienvenido al Panel de Administración</h2>
                     </div>
-                    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addUserModal">Agregar Nuevo Usuario</button>
+                    <div class="d-flex justify-content-between">
+                        <!-- Tarjeta 1 -->
+                        <div class="card" id="rolesCard">
+                            <h3 class="card__title">Roles</h3>
+                            <p class="card__content">Haz clic para ver los roles existentes </p>
+                            <div class="card__date">Usuarios</div>
+                            <div class="card__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2 -->
+                        <div class="card" id="inventoryCard">
+                            <h3 class="card__title">Inventario</h3>
+                            <p class="card__content">Haz clic para ver un reporte general de todos los productos existentes </p>
+                            <div class="card__date">Productos</div>
+                            <div class="card__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3 -->
+                        <div class="card" id="commentsCard">
+                            <h3 class="card__title">Comentarios</h3>
+                            <p class="card__content">Da un vistazo a lo que opinan los clientes del studio </p>
+                            <div class="card__date">Buzon</div>
+                            <div class="card__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Aquí esta la seccion de usuarios -->
+
+                <!-- Sección de Roles -->
+                <div id="rolesSection" style="display: none;">
+                    <button id="backButtonRoles" class="btn btn-secondary mb-3">Volver</button>
+                    <h2>Roles y Usuarios</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rolesContent">
+                            <!-- Aquí se mostrarán los roles -->
+                            <tr>
+                                <td>Usuario 1</td>
+                                <td>Administrador</td>
+                            </tr>
+                            <tr>
+                                <td>Usuario 2</td>
+                                <td>Tatuador</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Sección de Inventario -->
+                <div id="inventorySection" style="display: none;">
+                    <button id="backButtonInventory" class="btn btn-secondary mb-3">Volver</button>
+                    <h2>Inventario de Productos</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryContent">
+                            <!-- Aquí se mostrarán los productos -->
+                            <tr>
+                                <td>Producto 1</td>
+                                <td>10</td>
+                                <td>$50.00</td>
+                                <td>Categoria 1</td>
+                            </tr>
+                            <tr>
+                                <td>Producto 2</td>
+                                <td>5</td>
+                                <td>$30.00</td>
+                                <td>Categoria 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Sección de comentarios -->
+                <div id="commentsSection" style="display: none;">
+                    <button id="backButtonComments" class="btn btn-secondary mb-3">Volver</button>
+                    <h2>Comentarios y sugerencias</h2>
+                    <div id="commentsContent">
+                        <!-- Aquí se mostrarán los comentarios -->
+                    </div>
+                </div>
+
                 <div id="usuarios-content" style="display: none;">
                     <h2 class="mt-3">Usuarios</h2>
+                    <button class="btn-usuario boton-agregar" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                        <span class="text">Agregar</span>
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"></svg>
+                            <span class="buttonSpan">+</span>
+                        </span>
+                    </button>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
@@ -218,6 +326,48 @@
             </div>
         </div>
     </div>
+    <!-- Modal para editar usuario -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editUserModalLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editUserForm">
+                        <input type="hidden" id="editUserId" name="id_usuario">
+                        <div class="mb-3">
+                            <label for="editUsername" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="editUsername" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="editEmail" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPassword" class="form-label">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="editPassword" name="password" placeholder="(Opcional)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPin" class="form-label">Nuevo PIN</label>
+                            <input type="password" class="form-control" id="editPin" name="pin" placeholder="(Opcional)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editRole" class="form-label">Rol</label>
+                            <select class="form-control" id="editRole" name="role" required>
+                                <option value="admin">Administrador</option>
+                                <option value="tatoo">Tatuador</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal para agregar un nuevo producto -->
     <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -349,6 +499,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/panel-admin.js"></script>
+    <script src="../js/inicio-admin.js"></script>
 </body>
 
 </html>

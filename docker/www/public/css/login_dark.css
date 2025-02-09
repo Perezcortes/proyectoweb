@@ -190,7 +190,7 @@ input {
   min-height: 500px;
   flex: 1;
   margin: 20px auto; /* Centra el contenedor horizontalmente */
-
+  margin-bottom: 300px;
 }
 
 .form-container {
