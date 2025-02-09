@@ -5,3 +5,30 @@
 [29-Jan-2025 06:37:01 UTC] Todos los campos son obligatorios.
 [29-Jan-2025 06:37:38 UTC] Todos los campos son obligatorios.
 [29-Jan-2025 06:38:52 UTC] Todos los campos son obligatorios.
+[29-Jan-2025 06:45:55 UTC] Ya existe una cita registrada para este correo electrónico en la fecha especificada.
+[29-Jan-2025 07:35:44 UTC] Todos los campos son obligatorios.
+[29-Jan-2025 07:38:36 UTC] Todos los campos son obligatorios.
+[29-Jan-2025 07:40:51 UTC] Todos los campos son obligatorios.
+[29-Jan-2025 07:41:27 UTC] Todos los campos son obligatorios.
+[29-Jan-2025 07:43:47 UTC] Todos los campos son obligatorios.
+[07-Feb-2025 22:29:24 UTC] Error al insertar cita: Data truncated for column 'hora' at row 1
+[07-Feb-2025 22:29:24 UTC] No se pudo registrar la cita. Inténtelo nuevamente.
+[07-Feb-2025 22:29:47 UTC] Error al insertar cita: Data truncated for column 'hora' at row 1
+[07-Feb-2025 22:29:47 UTC] No se pudo registrar la cita. Inténtelo nuevamente.
+[07-Feb-2025 22:30:05 UTC] Error al insertar cita: Data truncated for column 'hora' at row 1
+[07-Feb-2025 22:30:05 UTC] No se pudo registrar la cita. Inténtelo nuevamente.
+[07-Feb-2025 22:33:05 UTC] Error al insertar cita: Incorrect time value: '10:00 am' for column 'hora' at row 1
+[07-Feb-2025 22:33:05 UTC] No se pudo registrar la cita. Inténtelo nuevamente.
+[07-Feb-2025 22:40:17 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 22:41:06 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 22:41:15 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 22:41:30 UTC] El formato del correo electrónico no es válido.
+[07-Feb-2025 22:41:40 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 22:56:53 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/config/database.php:1) in /var/www/html/models/percing.php on line 96
+[07-Feb-2025 22:56:53 UTC] No se ha recibido la fecha.
+[07-Feb-2025 22:58:14 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 23:06:54 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 23:21:19 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[07-Feb-2025 23:21:27 UTC] Ya existe una cita registrada en la fecha y hora especificada.
+[08-Feb-2025 06:22:02 UTC] El formato del correo electrónico no es válido.
+[09-Feb-2025 04:52:05 UTC] Ya existe una cita registrada en la fecha y hora especificada.
