@@ -63,13 +63,13 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./contenido_percing.php">Inicio</a>
+                    <a class="nav-link" href="./index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./productos.php">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./ejemplo.php">Contacto</a>
+                    <a class="nav-link" href="./login.php">Contacto</a>
                 </li>
             </ul>
         </div>
