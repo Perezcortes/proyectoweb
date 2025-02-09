@@ -1,253 +1,362 @@
-@media (max-width: 768px) {
-    /* Aquí puedes agregar tus estilos para pantallas pequeñas */
-    body {
-      padding: 10px;
-      justify-content: center;
-    }
-  
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-  
-    p {
-      font-size: 16px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    /* Aquí puedes agregar tus estilos para pantallas muy pequeñas */
-    body {
-      padding: 5px;
-    }
-  
-    h1 {
-      font-size: 20px;
-    }
-  
-    p {
-      font-size: 14px;
-    }
-  }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    /* Deja espacio para el navbar fijo */
+    background: -webkit-linear-gradient(45deg, #1a1919 0%, #313030 50%, #555454 100%);
+    background: linear-gradient(45deg, #1a1919 0%, #313030 50%, #555454 100%);
+        /* Gradiente de fondo */
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+}
 
-  /*fonodo del navbar*/
-  @keyframes hero-gradient-animation {
+@keyframes gradientAnimation {
     0% {
-        --s-start-0: 9%;
-        --s-end-0: 55%;
-        --c-0: hsla(266, 1%, 12%, 1);
-        --y-0: 80%;
-        --x-0: 85%;
-        --s-start-1: 5%;
-        --s-end-1: 72%;
-        --y-1: 24%;
-        --x-1: 60%;
-        --c-1: hsla(335, 2%, 22%, 1);
-        --c-2: hsla(53, 0%, 0%, 0.49);
-        --y-2: 82%;
-        --x-2: 13%;
-        --s-start-2: 5%;
-        --s-end-2: 52%;
-        --x-3: 24%;
-        --c-3: hsla(299, 4%, 36%, 1);
-        --s-start-3: 13%;
-        --s-end-3: 68%;
-        --y-3: 7%;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
     }
 
     100% {
-        --s-start-0: 9%;
-        --s-end-0: 55%;
-        --c-0: hsla(266, 0%, 12%, 1);
-        --y-0: 94%;
-        --x-0: 31%;
-        --s-start-1: 5%;
-        --s-end-1: 72%;
-        --y-1: 25%;
-        --x-1: 2%;
-        --c-1: hsla(0, 4%, 19%, 1);
-        --c-2: hsla(54, 0%, 0%, 0.49);
-        --y-2: 20%;
-        --x-2: 98%;
-        --s-start-2: 5%;
-        --s-end-2: 52%;
-        --x-3: 95%;
-        --c-3: hsla(298, 3%, 41%, 1);
-        --s-start-3: 13%;
-        --s-end-3: 68%;
-        --y-3: 92%;
+        background-position: 0% 50%;
     }
 }
 
-@property --s-start-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 9%
+.main-header {
+    background-image: url('../img/dejavushop2.JPG');
+    background-size: 35%;
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 82, 2);
+    text-align: center;
+    margin-top: 0px;
+    font-size: 25px; /* Tamaño de la letra */
+    font-family: "Old English Text MT", serif;
 }
 
-@property --s-end-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 55%
+.header-content h1 {
+    font-size: 3em;
+    margin: 0;
 }
 
-@property --c-0 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(266, 1%, 12%, 1)
+.header-content h2 {
+    font-size: 2em;
+    margin: 0;
 }
 
-@property --y-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 80%
+.info-section {
+    padding: 20px;
+    text-align: center;
+    
 }
 
-@property --x-0 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 85%
-}
-
-@property --s-start-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 5%
-}
-
-@property --s-end-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 72%
-}
-
-@property --y-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 24%
-}
-
-@property --x-1 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 60%
-}
-
-@property --c-1 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(335, 2%, 22%, 1)
-}
-
-@property --c-2 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(53, 0%, 0%, 0.49)
-}
-
-@property --y-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 82%
-}
-
-@property --x-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 13%
-}
-
-@property --s-start-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 5%
-}
-
-@property --s-end-2 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 52%
-}
-
-@property --x-3 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 24%
-}
-
-@property --c-3 {
-    syntax: '<color>';
-    inherits: false;
-    initial-value: hsla(299, 4%, 36%, 1)
-}
-
-@property --s-start-3 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 13%
-}
-
-@property --s-end-3 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 68%
-}
-
-@property --y-3 {
-    syntax: '<percentage>';
-    inherits: false;
-    initial-value: 7%
-}
-
-.navbar {
-    --c-0: hsla(266, 1%, 12%, 1);
-    --y-0: 80%;
-    --x-0: 85%;
-    --y-1: 24%;
-    --x-1: 60%;
-    --c-1: hsla(335, 2%, 22%, 1);
-    --c-2: hsla(53, 0%, 0%, 0.49);
-    --y-2: 82%;
-    --x-2: 13%;
-    --x-3: 24%;
-    --c-3: hsla(299, 4%, 36%, 1);
-    --y-3: 7%;
-    ;
-    color: #FFf;
-    background-color: hsla(0, 0%, 0%, 1);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 3000 3000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3));
-    animation: hero-gradient-animation 10s linear infinite alternate;
-    background-blend-mode: overlay, normal, normal, normal, normal;
-}
-/*fin del fondo*/
-
-.row{
+.custom-font {
+    font-family: "Big Shoulders Inline Display", serif;
     margin-top: 20px;
-    margin-bottom: 30px;
+    text-align: center; /* Alinea el texto al centro, si es necesario */
+    font-size: 25px; /* Tamaño de la letra */
+    color: #a1979f;  /* Cambia el color del texto */
 }
 
-/* Scrollbar personalizado */
+.cards-section h3 {
+    font-family: "Big Shoulders Inline Display", serif;
+    font-size: 30px;
+    color: #ffffff;  /* Color claro para un buen contraste */
+    text-align: center;
+    margin-top: 15px;
+    
+    /* Trazo sutil que le da un borde oscuro */
+    -webkit-text-stroke: 1px #555454;
+    
+    /* Sombra luminosa tipo “glow” */
+    text-shadow: 0 0 8px rgba(179, 85, 9, 0.8);
+    
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
 
-/* Fondo del scrollbar */
-::-webkit-scrollbar {
-    width: 12px; /* Ancho del scrollbar */
-    background-color: #212529; /* Color de fondo */
-  }
-  
-  /* Track bar */
-  ::-webkit-scrollbar-track {
-    background-color: #343a40; /* Color de la pista */
-  }
-  
-  /* Handle bar */
-  ::-webkit-scrollbar-thumb {
-    background-color: #0d6efd; /* Color de la manija */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #212529; /* Borde alrededor */
-  }
-  
-  /* Handle bar (Hover) */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #0a58ca; /* Color de la manija al pasar el ratón */
-  }
-  
+.cards-section h3:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 12px rgba(229, 108, 22, 0.838);
+}
+
+
+/*Secciones para tipos de productos*/
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 35px;
+    border-radius: 3px;
+    margin-bottom: 100px;
+}
+
+.card-cat {
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+    margin: 15px;
+}
+
+.card-cat img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.card-cat:hover {
+    transform: scale(1.1);
+}
+
+.card-cat h3 {
+    margin-top: 10px;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: #333 !important;
+    /* Color de fondo del navbar */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    position: fixed;
+    /* Fijar el navbar en la parte superior */
+}
+
+.navbar .navbar-brand {
+    color: #eee7e0 !important;
+    /* Color del texto de Deja Vu */
+    font-size: 1.5em;
+    /* Tamaño del texto de la marca */
+    font-weight: bold;
+    /* Peso de la fuente */
+}
+
+.navbar .navbar-brand:hover {
+    color: #c04c16 !important;
+    /* Color del texto de la marca al pasar el mouse */
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #eee7e0 !important;
+    /* Color de los enlaces */
+    font-size: 1.2em;
+    /* Tamaño del texto de los enlaces */
+    margin-right: 15px;
+    /* Espaciado entre enlaces */
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #c04c16 !important;
+    /* Color de los enlaces al pasar el mouse */
+}
+
+.navbar .form-inline .form-control {
+    border: 2px solid #2152c3;
+    /* Borde de la barra de búsqueda */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    padding: 5px 10px;
+    /* Espaciado interno */
+}
+
+.navbar .form-inline .btn {
+    background-color: #0d6efd !important;
+    /* Color de fondo del botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    color: #ffffff !important;
+    /* Color del texto del botón */
+    padding: 5px 15px;
+    /* Espaciado interno */
+    margin-left: 10px;
+    /* Espacio entre la barra de búsqueda y el botón */
+}
+
+.navbar .form-inline .btn:hover {
+    background-color: #3c50a8 !important;
+    /* Color de fondo del botón al pasar el mouse */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+    /* Color del borde del botón de toggle */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    /* Imagen SVG personalizada para el ícono del toggle */
+    filter: invert(100%);
+    /* Invertir el color del ícono para que sea visible sobre fondo oscuro */
+}
+
+/* Estilo para la barra de navegación colapsada */
+.navbar-collapse {
+    background-color: #333;
+    /* Asegurarse de que el fondo del menú colapsado coincida con el navbar */
+}
+
+/* Estilos para las secciones donde se muestran todos los productos en una card personalizada */
+.card {
+    width: 250px;
+    height: 480px;
+    padding: .8em;
+    background-color: #7c858a !important; /* Usar !important para forzar el estilo si es necesario */    position: relative;
+    overflow: hidden; /* Cambiado a hidden para evitar el desbordamiento */
+    box-shadow: 0 1px 3px rgba(133, 6, 6, 0.12), 0 1px 2px rgba(223, 53, 53, 0.24);
+    margin: 10px; /* Ajusta este valor según sea necesario */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido se disponga en columna */
+    justify-content: space-between; /* Distribuir espacio equitativamente entre elementos */
+}
+
+.card-img {
+    background-color: #f38236; /* Color de fondo del área de la imagen */
+    background-position: center;
+    height: 40%; /* Altura establecida al 60% de la tarjeta */
+    width: 100%; /* Ancho completo de la tarjeta */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor manteniendo sus proporciones */
+    border-radius: .5rem; /* Esquinas redondeadas */
+    transition: .3s ease; /* Transición suave para el efecto hover */
+    background-size: cover;
+}
+/*Efectos para ¿Que estas buscando?*/
+.main-header .header-content h1{
+    background: linear-gradient(45deg, #b8b7b6, #b8b7b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 8px rgba(92, 46, 5, 0.813);
+}
+
+.main-header .header-content h2{
+    background: linear-gradient(45deg, #b8b7b6, #b8b7b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 8px rgba(92, 46, 5, 0.813);
+}
+
+
+.card-info {
+    padding: 1em; /* Ajusta el relleno según sea necesario */
+    flex-grow: 1; /* Permite que .card-info crezca para ocupar el espacio disponible */
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-footer {
+    width: 100%; /* Ancho completo del footer */
+    display: flex; /* Usar flexbox para la alineación */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Alinear los elementos verticalmente en el centro */
+    padding-top: 5px; /* Relleno superior */
+    border-top: 1px solid #ddd; /* Borde superior */
+    margin-top: 1px; /* Margen superior para bajar el footer */
+    position: absolute; /* Fija el footer al fondo de la tarjeta */
+    bottom: 0; /* Lo coloca en la parte inferior de la tarjeta */
+    left: 0;
+    right: 0;
+    background-color: #799aad !important; /* Usar !important para forzar el estilo si es necesario */}
+
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.text-body {
+    font-size: .9em;
+    padding-bottom: 5px;
+}
+
+/*Button*/
+.card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+}
+
+/*Hover*/
+.card-img:hover {
+    transform: translateY(-10%);
+    box-shadow: rgba(3, 101, 180, 0.959) 0px 13px 47px -5px, rgba(2, 70, 116, 0.3) 0px 8px 16px -8px;
+}
+
+.card-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #e06817;
+}
+
+.product-section button {
+    background-color: #b65616;
+    border: none; /* Eliminé el borde de 3px para mayor claridad */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrará los elementos horizontalmente */
+    justify-content: center; /* Centrará los elementos verticalmente */
+}
+
+.product-section button:hover {
+    background-color: #a8540e
+}
+
+/* Contenedor para las cards de productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.product-section h2 {
+    font-family: 'Great Vibes', cursive; /* Tipo de letra */
+    font-size: 40px; /* Tamaño de letra */
+    color: #fffefe; /* Color de letra */
+    text-align: center; /* Centrar texto */
+    margin-top: 80px; /* Espaciado superior */
+    margin-bottom: 2px; /* Espaciado inferior */
+}
+
+/* Track bar */
+body::-webkit-scrollbar {
+    width: 12px; /* o el ancho deseado */
+}
+body::-webkit-scrollbar-track {
+    background-color: #343a40;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #90399bbc;
+    border-radius: 10px;
+    border: 2px solid #212529;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #6c2c74bc;
+}

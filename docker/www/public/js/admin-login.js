@@ -15,7 +15,7 @@
 
                 if (result.trim() === "admin_login") {
                     Swal.fire({
-                        title: "Bienvenido Admin",
+                        title: "Bienvenido",
                         text: "Redirigiendo al panel de administración...",
                         icon: "success",
                         confirmButtonText: "Aceptar",

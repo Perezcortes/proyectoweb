@@ -14,6 +14,20 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative; /* Asegura la posición relativa */
+}
+
+.header .logout-btn {
+    position: absolute; /* Posición absoluta para el botón */
+    top: 50%; /* Centrado verticalmente */
+    right: 20px; /* Distancia desde el lado derecho */
+    transform: translateY(-50%); /* Ajusta el centrado vertical */
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .sidebar {
@@ -51,12 +65,12 @@ body {
 
 /* Estilos de la tabla */
 table {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ab1b1b;
 }
 
 th, td {
@@ -65,8 +79,8 @@ th, td {
 }
 
 th {
-    background-color: #343a40;
-    color: white;
+    background-color: #68a36b;
+    color: rgb(0, 0, 0);
 }
 
 tr:nth-child(even) {
@@ -98,3 +112,244 @@ tr:nth-child(even) {
     background-color: #0a58ca; /* Color de la manija al pasar el ratón */
   }
   
+  /* Boton de agregar producto */
+  button.noselect {
+    width: 115px;  /* Ajustar el ancho del botón */
+    height: 35px;  /* Ajustar la altura del botón */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: #00a600;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #00a600;
+    margin-bottom: 25px;  /* Ajusta el margen inferior para separar el botón de la tabla */
+  }
+  
+  button,
+  button span {
+    transition: 200ms;
+  }
+  
+  button .text {
+    transform: translateX(15px);  /* Ajustar la posición del texto */
+    color: white;
+    font-weight: bold;
+    font-size: 12px;  /* Ajustar el tamaño de la fuente */
+    text-align: center;
+  }
+  
+  button .icon {
+    position: absolute;
+    border-left: 1px solid #007300;
+    transform: translateX(75px);  /* Ajustar la posición del icono */
+    height: 30px;  /* Ajustar la altura del icono */
+    width: 30px;  /* Ajustar el ancho del icono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button svg {
+    width: 12px;  /* Ajustar el tamaño del SVG */
+    fill: #eee;
+  }
+  
+  button:hover {
+    background: #00a600;
+  }
+  
+  button:active {
+    background: #00cc00;
+  }
+  
+  button:hover .text {
+    color: transparent;
+  }
+  
+  button:hover .icon {
+    width: 100px;  /* Ajustar el ancho del icono en hover */
+    border-left: none;
+    transform: translateX(0);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button:active .icon svg {
+    transform: scale(0.8);
+  }
+  
+  .buttonSpan {
+    color: white;
+    margin: 100px;  /* Ajustar el margen del botón */
+    font-size: 20px;  /* Ajustar el tamaño de la fuente del span */
+  }
+  
+/* Estilos específicos para el botón de agregar imagen */
+.custom-file-btn {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #206fe6;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow:
+    0 4px 6px -1px #488aec31,
+    0 2px 4px -1px #488aec17;
+  transition: all 0.6s ease;
+}
+
+.custom-file-btn:hover {
+  box-shadow:
+    0 10px 15px -3px #488aec4f,
+    0 4px 6px -2px #488aec17;
+}
+
+.custom-file-btn:focus,
+.custom-file-btn:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.custom-file-btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Estilos específicos para los folders */
+.folders-container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.folder-container {
+  width: fit-content;
+  text-align: center;
+}
+
+.folder {
+  width: min-content;
+  margin: auto;
+  animation: float 5s infinite linear;
+}
+
+.folder .top {
+  background-color: #FF8F56;
+  width: 60px;
+  height: 12px;
+  border-top-right-radius: 10px;
+}
+
+.folder .bottom {
+  background-color: #FFCE63;
+  width: 100px;
+  height: 70px;
+  box-shadow: 5px 5px 0 0 #283149;
+  border-top-right-radius: 8px;
+}
+
+.folder-container .title {
+  font-size: .9em;
+  color: #283149;
+  margin-top: 15px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/*Para el boton de volver en la tabla*/
+#product-table-container {
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 70px; /* Espacio adicional para los botones en la parte inferior */
+}
+
+#back-button {
+  position: absolute;
+  bottom: 20px; /* Mayor separación de la tabla */
+  left: 20px; /* Mayor separación del borde */
+  padding: 10px 20px;
+  background-color: #e2851b; /* Cambia este color según tu preferencia */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 10;
+}
+
+#back-button:hover {
+  background-color: #af7831; /* Color al pasar el ratón por encima */
+}
+
+.container-btn-file {
+  position: absolute;
+  bottom: 10px; /* Mayor separación de la tabla */
+  right: 20px; /* Mayor separación del borde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #307750;
+  color: #fff;
+  border-style: none;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.356);
+  transition: all 250ms;
+}
+
+.container-btn-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.container-btn-file > svg {
+  margin-right: 1em;
+}
+
+.container-btn-file::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0.5em;
+  background-color: #469b61;
+  z-index: -1;
+  transition: all 350ms;
+}
+
+.container-btn-file:hover::before {
+  width: 100%;
+}
