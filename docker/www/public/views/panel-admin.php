@@ -294,7 +294,7 @@
                     14.4375 28.34375L11.1875 34.375L6.1875 34.375L12.15625 25.03125ZM36 
                     20L44 20L44 22L36 22ZM36 27L44 27L44 29L36 29ZM36 35L44 35L44 37L36 37Z"></path>
                             </svg>
-                            Descargar Excel
+                            Descargar tabla
                         </button>
                         <h2>Productos</h2>
                         <table id="product-table" class="table">
@@ -526,8 +526,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../js/panel-admin.js"></script>
     <script src="../js/inicio-admin.js"></script>
+    <script src="../js/panel-admin.js"></script>
 </body>
 
 </html>
