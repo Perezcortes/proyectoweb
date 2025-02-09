@@ -430,21 +430,20 @@ tr:nth-child(even) {
   width: 100%;
 }
 
-/*Estilo para las tarjetas en el inicio de admin */
 /* Estilo general para las tarjetas */
 .card {
   --border-radius: 0.75rem;
   --primary-color: #c95609;
   --secondary-color: #3c3852;
   width: 280px;
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   padding: 1rem;
   cursor: pointer;
   border-radius: var(--border-radius);
   background: #f1f1f3;
   box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
   position: relative;
-  margin: 100px; /* Añadir margen alrededor de cada tarjeta */
+  margin: 20px; /* Margen reducido para evitar espacios excesivos */
 }
 
 /* Margen entre elementos dentro de la tarjeta */
@@ -505,12 +504,132 @@ tr:nth-child(even) {
   transform: translateX(3px);
 }
 
-/* Flexbox para distribuir las tarjetas horizontalmente */
+/* Contenedor de tarjetas: Flexbox para distribuirlas */
 .d-flex {
   display: flex;
+  flex-wrap: wrap;           /* Permite que las tarjetas se acomoden en varias líneas */
+  justify-content: center;    /* Centra las tarjetas en pantallas pequeñas */
+  gap: 10px;                  /* Espacio entre tarjetas */
 }
 
-.justify-content-between {
+/* En pantallas medianas y grandes, distribuir de forma espaciada */
+@media (min-width: 768px) {
+  .d-flex {
+    justify-content: space-between;
+  }
+}
+
+/* Ajustes responsivos para las tarjetas */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;          /* Las tarjetas ocuparán el 90% del ancho disponible */
+    margin: 10px auto;   /* Margen vertical menor y centrado horizontalmente */
+  }
+}
+
+
+/* Estilo del botón de volver */
+.btn-secondary {
+  background-color: #e2851b !important;
+  color: rgb(0, 0, 0) !important;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px; /* Ajusta el ancho según tus necesidades */
+}
+
+.btn-secondary:hover {
+  background-color: #af7831 !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+#rolesSection,
+#inventorySection,
+#commentsSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Asegúrate de que las secciones ocupen toda la altura disponible */
+}
+
+#rolesSection .btn,
+#inventorySection .btn,
+#commentsSection .btn {
+  align-self: flex-start; /* Alinea el botón a la izquierda */
+}
+
+/* Boton para descargar reporte general de inventario */ 
+/* From Uiverse.io by barisdogansutcu */ 
+.download-button {
+  position: relative;
+  border-width: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.download-button .docs {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 10px; /* Espacio entre las tarjetas */
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 10px;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #242a35;
+  border: solid 1px #e8e8e82d;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.download-button:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.download {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 30%;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 4px;
+  transform: translateY(0%);
+  background-color: #01e056;
+  border: solid 1px #01e0572d;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.download-button:hover .download {
+  transform: translateY(100%);
+}
+
+.download svg polyline,
+.download svg line {
+  animation: docs 1s infinite;
+}
+
+@keyframes docs {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
