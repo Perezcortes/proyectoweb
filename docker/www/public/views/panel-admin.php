@@ -85,8 +85,7 @@
                 </div>
 
                 <!-- Sección de Roles -->
-                <div id="rolesSection" style="display: none;">
-                    <button id="backButtonRoles" class="btn btn-secondary mb-3">Volver</button>
+                <div id="rolesSection" style="display: none; display: flex; flex-direction: column;">
                     <h2>Roles y Usuarios</h2>
                     <table class="table">
                         <thead>
@@ -107,11 +106,11 @@
                             </tr>
                         </tbody>
                     </table>
+                    <button id="backButtonRoles" class="btn btn-secondary mb-3">Volver</button>
                 </div>
 
                 <!-- Sección de Inventario -->
-                <div id="inventorySection" style="display: none;">
-                    <button id="backButtonInventory" class="btn btn-secondary mb-3">Volver</button>
+                <div id="inventorySection" style="display: none; display: flex; flex-direction: column;">
                     <h2>Inventario de Productos</h2>
                     <table class="table">
                         <thead>
@@ -124,30 +123,59 @@
                         </thead>
                         <tbody id="inventoryContent">
                             <!-- Aquí se mostrarán los productos -->
-                            <tr>
-                                <td>Producto 1</td>
-                                <td>10</td>
-                                <td>$50.00</td>
-                                <td>Categoria 1</td>
-                            </tr>
-                            <tr>
-                                <td>Producto 2</td>
-                                <td>5</td>
-                                <td>$30.00</td>
-                                <td>Categoria 2</td>
                             </tr>
                         </tbody>
                     </table>
+                    <button id="backButtonInventory" class="btn btn-secondary mb-3">Volver</button>
+                    <button class="download-button">
+                        <div class="docs">
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="20"
+                                height="20"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="css-i6dzq1">
+                                <path
+                                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Descargar reporte
+                        </div>
+                        <div class="download">
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="css-i6dzq1">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </div>
+                    </button>
                 </div>
 
                 <!-- Sección de comentarios -->
-                <div id="commentsSection" style="display: none;">
-                    <button id="backButtonComments" class="btn btn-secondary mb-3">Volver</button>
+                <div id="commentsSection" style="display: none; display: flex; flex-direction: column;">
                     <h2>Comentarios y sugerencias</h2>
                     <div id="commentsContent">
                         <!-- Aquí se mostrarán los comentarios -->
                     </div>
+                    <button id="backButtonComments" class="btn btn-secondary mb-3">Volver</button>
                 </div>
+
 
                 <div id="usuarios-content" style="display: none;">
                     <h2 class="mt-3">Usuarios</h2>
@@ -494,7 +522,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

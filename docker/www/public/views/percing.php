@@ -7,7 +7,7 @@
     <title>Deja Vu - Perforaciones</title>
     <link rel="icon" type="image/png" href="../img/dj1.png">
 
-    <link rel="stylesheet" href="../css/percing.css">
+    <link rel="stylesheet" href="../css/percing.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,22 +24,22 @@
 </head>
 
 <style>
-     .modal-content {
-  background-color: #181617 !important; /* Color de fondo */
-  color: white !important; /* Color del texto */
-}
+    .modal-content {
+        background-color: #181617 !important;
+        /* Color de fondo */
+        color: white !important;
+        /* Color del texto */
+    }
 
- .modal-header {
-  background-color: #181617 !important;
-  border-bottom: 2px solid #E07FAB !important;
-}
+    .modal-header {
+        background-color: #181617 !important;
+        border-bottom: 2px solid #E07FAB !important;
+    }
 
- .modal-footer {
-  background-color: #181617 !important;
-  border-top: 2px solid #E07FAB !important;
-}
-
-
+    .modal-footer {
+        background-color: #181617 !important;
+        border-top: 2px solid #E07FAB !important;
+    }
 </style>
 
 <body class="fondo">
@@ -117,7 +117,7 @@
                         <div class="mb-3">
                             <label for="Email" class="col-form-label">Correo electronico:</label>
                             <input id="Email" type="text" class="form-control" name="email" required>
-                          <label  class="col-form-label-sm">*El correo electronioco debe estra prebiamente registrado*</label>
+                            <label class="col-form-label-sm">*El correo electronioco debe estra prebiamente registrado*</label>
                         </div>
                         <div class="mb-3">
                             <label for="Nombre" class="col-form-label">Nombre del cliente:</label>
@@ -129,16 +129,16 @@
                             <input id="datepicker" type="text" class="border border-gray-300 rounded-md p-2 w-64 mt-2"
                                 name="fecha" required>
                         </div>
-                        
+
                         <!-- Reloj -->
                         <div class="mb-3">
-                            
-                        <p id="selectHour" class="text-primary" style="cursor: pointer;" onclick="toggleHours()">Hora de la cita:</p>
-                        <input type="hidden" id="hiddenHour" name="hora">
-                        <div id="hourButtons" class="d-none">
-                          
+
+                            <p id="selectHour" class="text-primary" style="cursor: pointer;" onclick="toggleHours()">Hora de la cita:</p>
+                            <input type="hidden" id="hiddenHour" name="hora">
+                            <div id="hourButtons" class="d-none">
+
+                            </div>
                         </div>
-                    </div>
 
 
                     </form>
@@ -147,33 +147,33 @@
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-info" id="liveToastBtn">Reservar cita</button>
 
-                 
+
                 </div>
             </div>
         </div>
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
-                                <strong class="me-auto">Deja vu</strong>
-                                <small>¡Atencion!</small>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body " >
-                                Tu cita fue registrada con exito c:.
-                            </div>
-                        </div>
-                    </div>
-    <!--contenido  de la pag-->
-    <div class="container mt-4">
-    <!-- Contenedor donde se insertarán las tarjetas o el detalle -->
-    <div id="contenido">
-        <div class="row  g-3" id="card-container">
-            <!-- Aquí se insertarán dinámicamente las tarjetas con JavaScript -->
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Deja vu</strong>
+                <small>¡Atencion!</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+            <div class="toast-body ">
+                Tu cita fue registrada con exito c:.
+            </div>
         </div>
     </div>
-</div>
+    <!--contenido  de la pag-->
+    <div class="container mt-4">
+        <!-- Contenedor donde se insertarán las tarjetas o el detalle -->
+        <div id="contenido">
+            <div class="row  g-3" id="card-container">
+                <!-- Aquí se insertarán dinámicamente las tarjetas con JavaScript -->
+            </div>
+        </div>
+    </div>
     <!-- Incluir el Footer -->
     <?php include './footer.php'; ?>
     <script src="../js/citas_percing.js"></script>
