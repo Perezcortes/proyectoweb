@@ -1,5 +1,5 @@
-﻿<?php
-require_once 'Database.php';
+<?php
+require_once '../config/database.php';
 
 class TatuadorModel {
     private $conn;
@@ -15,8 +15,15 @@ class TatuadorModel {
         $stmt->bindParam(":searchTerm", $searchTerm);
         $stmt->execute();
         
-        $tatuadores = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $tatuadores;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-}
+
+    // Mueve esta función dentro de la clase
+    public function getAllTatuadores() {
+        $stmt = $this->conn->prepare("SELECT * FROM tatuadores");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+} // Aquí cierra correctamente la clase
+
 ?>
