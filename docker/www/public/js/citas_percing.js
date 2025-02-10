@@ -10,15 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
-    
 });
 
 function fetchOcupiedHours(fecha) {
     fetch(`../models/citas_percing.php?fecha=${encodeURIComponent(fecha)}`)
         .then(response => response.json())
         .then(data => {
-            console.log("Respuesta de la API:", data); // <-- Para verificar formato de horas
             if (data.success) {
                 generateHourButtons(data.ocupadas);
             } else {
@@ -28,14 +25,11 @@ function fetchOcupiedHours(fecha) {
         .catch(error => console.error("Error en la petición:", error));
 }
 
-
 function generateHourButtons(ocupadas = []) {
     const container = document.getElementById("hourButtons");
     container.innerHTML = "";
 
-    const ocupadasNormalizadas = ocupadas.map(hora => hora.split(".")[0]); // Normalizar horas ocupadas
-
-    console.log("Horas ocupadas normalizadas:", ocupadasNormalizadas); // Para verificar
+    const ocupadasNormalizadas = ocupadas.map(hora => hora.split(".")[0]);
 
     const hours = [10, 11, 12, 13, 14, 15, 16, 18, 19, 20];
     const intervals = [":00", ":20", ":40"];
@@ -45,7 +39,7 @@ function generateHourButtons(ocupadas = []) {
     let count = 0;
 
     hours.forEach(hour => {
-        if (hour === 17) return; // Omitir 5 PM
+        if (hour === 17) return;
         intervals.forEach(interval => {
             let amPm = hour < 12 ? "am" : "pm";
             let displayHour = hour <= 12 ? hour : hour - 12;
@@ -53,22 +47,19 @@ function generateHourButtons(ocupadas = []) {
 
             let button = document.createElement("button");
             button.type = "button";
-            button.className = "btn m-1"; // Eliminamos la clase btn-primary para personalizar el estilo
+            button.className = "btn m-1";
             button.innerText = `${displayHour}${interval} ${amPm}`;
 
-            // Aplicar estilos personalizados
-            button.style.backgroundColor = "#1a1a1a"; // Fondo oscuro
-            button.style.color = "#ff4da6"; // Texto rosa neón
-            button.style.border = "2px solid #ff4da6"; // Borde rosa neón
-            button.style.padding = "8px 15px"; // Ajustar tamaño
-            button.style.borderRadius = "8px"; // Esquinas redondeadas
+            button.style.backgroundColor = "#1a1a1a";
+            button.style.color = "#ff4da6";
+            button.style.border = "2px solid #ff4da6";
+            button.style.padding = "8px 15px";
+            button.style.borderRadius = "8px";
 
-            // Si la hora está ocupada, cambiar estilo y deshabilitar
             if (ocupadasNormalizadas.includes(formattedHour)) {
                 button.disabled = true;
-                button.style.backgroundColor = "#ff4da6"; // Fondo rosa para ocupado
-                button.style.color = "#1a1a1a"; // Texto oscuro para contraste
-                button.style.border = "2px solid #ff4da6"; 
+                button.style.backgroundColor = "#ff4da6";
+                button.style.color = "#1a1a1a";
             } else {
                 button.onclick = () => selectHour(`${displayHour}${interval} ${amPm}`);
             }
@@ -87,8 +78,6 @@ function generateHourButtons(ocupadas = []) {
     container.appendChild(row);
 }
 
-
-
 function selectHour(hour) {
     const formattedHour = convertTo24HourFormat(hour);
     document.getElementById("selectHour").innerText = `Hora seleccionada: ${hour}`;
@@ -100,15 +89,14 @@ function convertTo24HourFormat(hourStr) {
     const [time, period] = hourStr.split(" ");
     let [hours, minutes] = time.split(":");
     hours = parseInt(hours);
-    
+
     if (period === "pm" && hours !== 12) hours += 12;
     if (period === "am" && hours === 12) hours = 0;
-    
+
     return `${hours.toString().padStart(2, '0')}:${minutes}:00`;
 }
 
-// Envío de datos al servidor
-
+// 🚀 Envío de datos con SweetAlert2
 document.getElementById("liveToastBtn").addEventListener("click", function () {
     const email = document.getElementById("Email").value.trim();
     const nombre = document.getElementById("Nombre").value.trim();
@@ -116,7 +104,11 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
     const hora = document.getElementById("hiddenHour").value;
 
     if (!email || !nombre || !fecha || !hora || hora === "Seleccionar hora") {
-        alert("Por favor, complete todos los campos.");
+        Swal.fire({
+            icon: "warning",
+            title: "Campos incompletos",
+            text: "Por favor, completa todos los campos antes de enviar.",
+        });
         return;
     }
 
@@ -130,32 +122,51 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            const toast = new bootstrap.Toast(document.getElementById("liveToast"));
-            toast.show();
+            Swal.fire({
+                icon: "success",
+                title: "Cita registrada",
+                text: "Tu cita se ha registrado exitosamente.",
+            });
+        } else if (data.message.includes("ya existe")) {
+            Swal.fire({
+                icon: "error",
+                title: "Cita duplicada",
+                text: "Ya existe una cita con estos datos. Intenta con otra fecha u hora.",
+            });
         } else {
-            alert(data.message);
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: data.message || "Ocurrió un problema al registrar la cita.",
+            });
         }
     })
     .catch(error => {
         console.error("Error:", error);
-        alert("Ocurrió un error al registrar la cita.");
+        Swal.fire({
+            icon: "error",
+            title: "Error del servidor",
+            text: "Ocurrió un error inesperado al procesar la solicitud.",
+        });
     });
 });
 
 function toggleHours() {
     const container = document.getElementById("hourButtons");
-    
+
     if (container.classList.contains("d-none")) {
-        // Verifica si hay una fecha seleccionada antes de mostrar las horas
         const fecha = document.getElementById("datepicker").value;
         if (!fecha) {
-            alert("Por favor, selecciona una fecha primero.");
+            Swal.fire({
+                icon: "warning",
+                title: "Fecha requerida",
+                text: "Por favor, selecciona una fecha primero.",
+            });
             return;
         }
 
-        // Generar los botones solo si no existen
         if (!container.hasChildNodes()) {
-            fetchOcupiedHours(fecha); // Llama a la función para obtener las horas ocupadas
+            fetchOcupiedHours(fecha);
         }
 
         container.classList.remove("d-none");

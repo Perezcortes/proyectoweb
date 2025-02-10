@@ -88,7 +88,7 @@ function mostrarDetalle(nombre, imagen, descripcion, joyeria, cicatrizacion, dol
             
             <div class="row">
                 <div class="col-md-6">
-                    <img src="../img/${imagen}" class="img-fluid" alt="${nombre}" style="max-height: 400px; object-fit: cover;">
+                    <img src="../img/${imagen}" class="img-fluid" alt="${nombre}" style="max-height: 400px; width: 90%; object-fit: cover;">
                 </div>
                 <div class="col-md-6">
                     <h4 class="titulo">Descripción</h4>

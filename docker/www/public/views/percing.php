@@ -7,10 +7,9 @@
     <title>Deja Vu - Perforaciones</title>
     <link rel="icon" type="image/png" href="../img/dj1.png">
 
-    <link rel="stylesheet" href="../css/percing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Flatpickr CSS calendario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- Bootstrap JS -->
@@ -20,7 +19,10 @@
     <!-- Bootstrap Bundle JS (con Popper incluido) -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/contenido_percing.js"></script>
+    <link rel="stylesheet" href="../css/percing.css?v=<?php echo time(); ?>">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../js/contenido_percing.js?v=<?php echo time(); ?>"></script>
 </head>
 
 <style>
@@ -152,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <!-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
                                 <strong class="me-auto">Deja vu</strong>
@@ -164,7 +166,7 @@
                                 Tu cita fue registrada con exito c:.
                             </div>
                         </div>
-                    </div>
+                    </div> -->
     <!--contenido  de la pag-->
     <div class="container mt-4">
     <!-- Contenedor donde se insertarán las tarjetas o el detalle -->
@@ -176,7 +178,7 @@
 </div>
     <!-- Incluir el Footer -->
     <?php include './footer.php'; ?>
-    <script src="../js/citas_percing.js"></script>
+    <script src="../js/citas_percing.js?v=<?php echo time(); ?>"></script>
 </body>
 
 </html>
