@@ -81,6 +81,16 @@ document
     const searchInput = document.querySelector(".form-control");
     const searchQuery = searchInput.value.trim();
 
+    // Validar que el campo de búsqueda no esté vacío
+    if (searchQuery === "") {
+      Swal.fire({
+        title: "Por favor ingresa tu búsqueda",
+        icon: "warning",
+        confirmButtonText: "OK"
+      });
+      return; // Salir de la función si no se ingresa nada
+    }
+
     if (searchQuery !== "") {
       fetch(
         `../controllers/AccionProductos.php?search=${encodeURIComponent(

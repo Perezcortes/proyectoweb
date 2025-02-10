@@ -33,6 +33,15 @@ class Product
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Obtener productos con campos específicos
+    public function getProductsFields()
+    {
+        $query = "SELECT nombre, cantidad, precio, categoria FROM " . $this->table_name;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     // Obtener productos por categoría (nombre, cantidad, precio)
     public function getProductsByCategoryFolder($category)
     {
