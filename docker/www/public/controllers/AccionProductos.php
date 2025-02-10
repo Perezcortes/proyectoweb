@@ -16,19 +16,19 @@ try {
         $response = $product->deleteProduct($id);
         echo json_encode($response);
 
-        // Obtener productos por categoría todos los campos
+    // Obtener productos por categoría todos los campos
     } elseif (isset($_GET['category'])) {
         $category = $_GET['category'];
         $products = $product->getProductsByCategory($category);
         echo json_encode($products);
 
-        // Obtener productos por categoría (nombre, cantidad, precio)
+    // Obtener productos por categoría (nombre, cantidad, precio)
     } elseif (isset($_GET['category'])) {
         $category = $_GET['category'];
         $products = $product->getProductsByCategoryFolder($category); // Usar el método getProductsByCategoryFolder
         echo json_encode($products);
 
-        // Buscar productos
+    // Buscar productos
     } elseif (isset($_GET['search'])) {
         $search = $_GET['search'];
         $products = $product->searchProducts($search);
@@ -37,7 +37,7 @@ try {
             'clearSearch' => true // Indica al frontend que debe limpiar el campo de búsqueda
         ]);
 
-        // Obtener un producto por ID para editar
+    // Obtener un producto por ID para editar
     } elseif (isset($_GET['id_producto'])) {
         $id_producto = $_GET['id_producto'];
 
@@ -49,7 +49,7 @@ try {
             echo json_encode($productDetails);
         }
 
-        // Actualizar producto
+    // Actualizar producto
     } elseif (isset($_POST['id_producto'])) {
         $id = $_POST['id_producto'];
         $nombre = $_POST['nombre'];
@@ -60,6 +60,12 @@ try {
         // Llamar al método que actualiza el producto
         $response = $product->updateProduct($id, $nombre, $cantidad, $descripcion, $precio, $categoria);
         echo json_encode($response);
+
+    // Obtener productos con campos específicos (nombre, cantidad, precio, categoria)
+    } elseif (isset($_GET['fields'])) {
+        $products = $product->getProductsFields();
+        echo json_encode($products);
+
     } else {
         throw new Exception("Parámetro no especificado");
     }

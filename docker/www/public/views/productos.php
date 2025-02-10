@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deja Vu Body Art</title>
+    <title>Deja Vu Shop</title>
     <link rel="icon" type="image/png" href="../img/dj1.png">
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand" href="../views/productos.php">Deja Vu Body Art</a>
+        <a class="navbar-brand" href="../views/productos.php">Deja Vu Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +40,7 @@
         <header class="main-header">
             <div class="header-content">
                 <h1>¿Qué estás buscando?</h1>
-                <h2>Deja Vu Body Art</h2>
+                <h2>Explora nuestros productos</h2>
             </div>
         </header>
         <section class="info-section">
