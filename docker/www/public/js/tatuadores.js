@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         text: `No se encontró ningún tatuador con el nombre "${searchTerm}".`,
                     });
                 } else {
-                    container.innerHTML = ""; // 🔥 Limpiar pantalla y mostrar solo el resultado
+                    container.innerHTML = ""; // Limpiar pantalla y mostrar solo el resultado
                     renderizarTatuadores(data);
                 }
             })
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderizarTatuadores(data) {
         const container = document.getElementById("results");
-        container.innerHTML = ""; // 🔥 Limpiar contenido previo
+        container.innerHTML = ""; // Limpiar contenido previo
 
         data.forEach(tatuador => {
             const imagenes = tatuador.portafolio.split("/");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             container.innerHTML += tatuadorHTML;
         });
 
-        // 🔥 Inicializar Swiper para la nueva lista de tatuadores
+        // Inicializar Swiper para la nueva lista de tatuadores
         new Swiper(".swiper-container", {
             slidesPerView: "auto",
             spaceBetween: 10,
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         });
 
-        // 🔥 Agregar evento para ampliar imágenes
+        // Agregar evento para ampliar imágenes
         document.querySelectorAll(".swiper-slide img.ampliable").forEach((img) => {
             img.addEventListener("click", function () {
                 var imageView = document.createElement("div");
